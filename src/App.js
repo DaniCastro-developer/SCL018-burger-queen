@@ -4,6 +4,7 @@ import Detalle from './components/Detalle';
 import Menu from './components/Menu';
 
 function App() {
+  const logo = ''
   return (
     <div className='container mt-5'>
       <h1 className='text-center'> Hola buenos días </h1>

@@ -1,5 +1,5 @@
 {
-"menu": [
+"products": [
     {
         "id": 1,
         "name": "Café americano",
@@ -40,6 +40,38 @@
         "category": "plato",
         "time": "mañana",
         "url":"https://s.yimg.com/ny/api/res/1.2/_mMkG8Yy1Mwo7_rurkXeBQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM2NQ--/https://s.yimg.com/uu/api/res/1.2/mESdSLYxYlcS6h4X7swdkw--~B/aD01MDI7dz04ODA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/es/iprofesional_650/856774cd16c420583af43064550b6466"
+    },
+    {
+        "id": 6,
+        "name": "Helado",
+        "tamaño": "simple",
+        "price": 10,
+        "category": "helado",
+        "time": "tarde",
+        "url":"https://topjoyec.com/wp-content/uploads/2020/09/artesanalsimple.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Helado",
+        "tamaño": "doble",
+        "price": 15,
+        "category": "helado",
+        "time": "tarde",
+        "url":"https://topjoyec.com/wp-content/uploads/2020/09/artesanaldoble.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Chispitas",
+        "price": 5,
+        "category": "extras",
+        "time": "tarde"
+    },
+    {
+        "id": 8,
+        "name": "Galletas",
+        "price": 5,
+        "category": "extras",
+        "time": "tarde"
     }
 ]
 }
