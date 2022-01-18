@@ -1,0 +1,45 @@
+{
+"menu": [
+    {
+        "id": 1,
+        "name": "Café americano",
+        "price": 5,
+        "category": "bebestible",
+        "time": "mañana",
+        "url":"https://elmejorcafe.info/wp-content/uploads/2019/06/coffee-cup-american-e1600797942495.jpg"
+    },
+    {
+        
+            "id": 2,
+            "name": "Café con leche",
+            "price": 7,
+            "category": "bebestible",
+            "time": "mañana",
+            "url":"https://img-global.cpcdn.com/recipes/4ce58d8ef0392f27/400x400cq70/photo.jpg"
+    }, 
+    {
+        "id": 3,
+        "name": "Jugo natural",
+        "price": 7,
+        "category": "bebestible",
+        "time": "mañana",
+        "url":"https://img.vixdata.io/pd/jpg-large/es/sites/default/files/imj/imujer/z/zumoterapia-para-lucir-mejor-3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Churros",
+        "price": 7,
+        "category": "plato",
+        "time": "mañana",
+        "url":"https://d1kxxrc2vqy8oa.cloudfront.net/wp-content/uploads/2020/09/28221827/RFB-1208-1-churrosrellenos.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Sandwich miga",
+        "price": 7,
+        "category": "plato",
+        "time": "mañana",
+        "url":"https://s.yimg.com/ny/api/res/1.2/_mMkG8Yy1Mwo7_rurkXeBQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM2NQ--/https://s.yimg.com/uu/api/res/1.2/mESdSLYxYlcS6h4X7swdkw--~B/aD01MDI7dz04ODA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/es/iprofesional_650/856774cd16c420583af43064550b6466"
+    }
+]
+}
