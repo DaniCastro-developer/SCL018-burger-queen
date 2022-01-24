@@ -12,16 +12,23 @@ const MenuMañana = () => {
 
     
   return <div>     
-            <h2> Comida </h2>
+            <h2 className='mt-5'> Comida </h2>
                     {
-                        food.filter(menu => menu.time === 'mañana').map((item, id) => (
-                        <p class="mt-3 col-md-">
-                    <button type= "button" className="btn btn-outline-info bt-lg" key={id}>{item.name} - ${item.price} </button>
+                        food.filter(menu => menu.time === 'mañana').filter(element => element.category === 'comida').map((item, id) => (
+                        <p key={id} className="mt-3 col-md-">
+                    <button type= "button" className="btn btn-outline-success bt-lg" id={item.id}>{item.name} - ${item.price} </button>
                     </p>
                 ))
-
-
                     }
+            <h2 className='mt-5'> Bebestibles </h2>
+            {
+                        food.filter(menu => menu.time === 'mañana').filter(element => element.category === 'bebestible').map((item, id) => (
+                        <p key={id} className="mt-3 col-md-">
+                    <button type= "button" className="btn btn-outline-success bt-lg" id={item.id}>{item.name} - ${item.price} </button>
+                    </p>
+                ))
+                    }
+            
   </div>;
 };
 

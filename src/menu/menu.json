@@ -112,28 +112,28 @@
         "id": 15,
         "name": "Agua chica",
         "price": 5,
-        "category": "Bebestible",
+        "category": "bebestible",
         "time": "tarde"
     },
     {
         "id": 16,
         "name": "Agua grande",
         "price": 7,
-        "category": "Bebestible",
+        "category": "bebestible",
         "time": "tarde"
     },
     {
         "id": 15,
         "name": "Bebida chica",
         "price": 7,
-        "category": "Bebestible",
+        "category": "bebestible",
         "time": "tarde"
     },
     {
         "id": 15,
         "name": "Bebida grande",
         "price": 10,
-        "category": "Bebestible",
+        "category": "bebestible",
         "time": "tarde"
     }
 ]

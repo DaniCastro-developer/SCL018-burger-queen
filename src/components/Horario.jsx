@@ -36,27 +36,8 @@ const Horario = () => {
     return (
         <div>
             <h2> Selecciona el menú </h2>
-            <Link to={`/menuMañana`}> <button className="btn btn-primary btn-block mx-2"> Mañana </button> </Link> 
-            <Link to={`/menuTarde`}><button className="btn btn-primary btn-block" > Tarde </button> </Link>
-            
-            {/* <h2> Productos en venta </h2>
-            {
-                products.map((item, id) => (
-                    <button type= "button" className="btn btn-outline-info bt-lg" key={id}>
-                       
-                        {item.name} - ${item.price} 
-                        </button>
-                ))
-
-            }
-            
-            <h2> Comida </h2>
-                    {
-                    food.map((item, id) => (
-                    <button type= "button" className="btn btn-outline-info bt-lg" key={id}>{item.name} - ${item.price} </button>
-                ))
-
-                    } */}
+            <Link to={`/menuMañana`}> <button className="btn btn-outline-success btn-block mx-2 active"> Mañana </button> </Link> 
+            <Link to={`/menuTarde`}><button className="btn btn-outline-success btn-block active" > Tarde </button> </Link>
                 
         </div>
     )

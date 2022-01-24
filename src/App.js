@@ -13,6 +13,8 @@ import Horario from './components/Horario';
 import MenuMañana from './components/MenuMañana';
 import MenuTarde from './components/MenuTarde';
 import NavBar from './components/NavBar';
+import Login from './components/Login'
+import Registro from './components/Registro'
 
 function App() {
   return (
@@ -27,19 +29,23 @@ function App() {
 
       <Switch>
         <Route path= '/login'>
-          ... Register 
+          <div>
+          <Login/>
+          </div>
         </Route>
       </Switch>
 
       <Switch>
         <Route path= '/register'>
-          ... Crear cuenta
+          <div>
+          <Registro/>
+          </div>
         </Route>
       </Switch>
 
       <Switch>
         <Route path= '/time'>
-         <NavBar logo = '/https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Ice_Cream_dessert_02.jpg/245px-Ice_Cream_dessert_02.jpg.png'/>
+         <NavBar />
           <Horario/>
           <hr/>
         </Route>
@@ -53,17 +59,6 @@ function App() {
           <div className='col-8'>
           <Horario/>
           <MenuMañana/>
-          {/* < Menu/> */}  
-            {/* <h2> Productos en venta </h2>
-            <hr/>
-            <h2> Comida </h2>
-            <hr/>
-            <h2> Bebestibles </h2>
-            <hr/>
-            <h2> Extras </h2>
-            <hr/>
-            <h2> Opciones </h2>
-            <hr/> */}
           </div>
             <div className='col-4'>
               <Detalle/>
