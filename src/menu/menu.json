@@ -6,7 +6,7 @@
         "price": 5,
         "category": "bebestible",
         "time": "mañana",
-        "url":"https://elmejorcafe.info/wp-content/uploads/2019/06/coffee-cup-american-e1600797942495.jpg"
+        "image":"https://elmejorcafe.info/wp-content/uploads/2019/06/coffee-cup-american-e1600797942495.jpg"
     },
     {
         
@@ -15,7 +15,7 @@
             "price": 7,
             "category": "bebestible",
             "time": "mañana",
-            "url":"https://img-global.cpcdn.com/recipes/4ce58d8ef0392f27/400x400cq70/photo.jpg"
+            "image":"https://img-global.cpcdn.com/recipes/4ce58d8ef0392f27/400x400cq70/photo.jpg"
     }, 
     {
         "id": 3,
@@ -23,7 +23,7 @@
         "price": 7,
         "category": "bebestible",
         "time": "mañana",
-        "url":"https://img.vixdata.io/pd/jpg-large/es/sites/default/files/imj/imujer/z/zumoterapia-para-lucir-mejor-3.jpg"
+        "image":"https://img.vixdata.io/pd/jpg-large/es/sites/default/files/imj/imujer/z/zumoterapia-para-lucir-mejor-3.jpg"
     },
     {
         "id": 4,
@@ -31,7 +31,7 @@
         "price": 7,
         "category": "comida",
         "time": "mañana",
-        "url":"https://d1kxxrc2vqy8oa.cloudfront.net/wp-content/uploads/2020/09/28221827/RFB-1208-1-churrosrellenos.jpg"
+        "image":"https://d1kxxrc2vqy8oa.cloudfront.net/wp-content/uploads/2020/09/28221827/RFB-1208-1-churrosrellenos.jpg"
     },
     {
         "id": 5,
@@ -39,7 +39,7 @@
         "price": 7,
         "category": "comida",
         "time": "mañana",
-        "url":"https://s.yimg.com/ny/api/res/1.2/_mMkG8Yy1Mwo7_rurkXeBQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM2NQ--/https://s.yimg.com/uu/api/res/1.2/mESdSLYxYlcS6h4X7swdkw--~B/aD01MDI7dz04ODA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/es/iprofesional_650/856774cd16c420583af43064550b6466"
+        "image":"https://s.yimg.com/ny/api/res/1.2/_mMkG8Yy1Mwo7_rurkXeBQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM2NQ--/https://s.yimg.com/uu/api/res/1.2/mESdSLYxYlcS6h4X7swdkw--~B/aD01MDI7dz04ODA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/es/iprofesional_650/856774cd16c420583af43064550b6466"
     },
     {
         "id": 6,
@@ -48,7 +48,7 @@
         "price": 10,
         "category": "comida",
         "time": "tarde",
-        "url":"https://topjoyec.com/wp-content/uploads/2020/09/artesanalsimple.jpg"
+        "image":"https://topjoyec.com/wp-content/uploads/2020/09/artesanalsimple.jpg"
     },
     {
         "id": 7,
@@ -57,7 +57,7 @@
         "price": 15,
         "category": "comida",
         "time": "tarde",
-        "url":"https://topjoyec.com/wp-content/uploads/2020/09/artesanaldoble.jpg"
+        "image":"https://topjoyec.com/wp-content/uploads/2020/09/artesanaldoble.jpg"
     },
     {
         "id": 8,

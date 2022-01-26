@@ -16,14 +16,14 @@ const Detalle = () => {
 
 
     return (
-        <div>
+        <div className='container'>
            <h2> Detalle compra </h2>
             {/*  {
                 product.map((item, id) => {
                     <li key= {id}> {item.name} - ${item.price} </li>
                 })
             } */}
-            <button className="btn btn-dark btn-block"> Enviar pedido </button> 
+            <button className="h-18 px-5 m-2 text-pink-100 transition-colors duration-150 bg-gray-600 rounded-lg focus:shadow-outline hover:bg-gray-800 font-bold py-2 "> Enviar pedido </button> 
 
         </div>
     )

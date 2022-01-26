@@ -15,14 +15,17 @@ import MenuTarde from './components/MenuTarde';
 import NavBar from './components/NavBar';
 import Login from './components/Login'
 import Registro from './components/Registro'
+import Roles from './components/Roles'
+import Carrusel from './components/Carrusel';
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route path= '/' exact>
-          <div className='container mt-5'>
+          <div>
             <Bienvenida/>
+           {/*  <Carrusel/> */}
           </div>
         </Route>
       </Switch>
@@ -37,8 +40,14 @@ function App() {
 
       <Switch>
         <Route path= '/register'>
-          <div>
           <Registro/>
+        </Route>
+      </Switch>
+
+      <Switch>
+        <Route path= '/role' exact>
+          <div>
+            <Roles/>
           </div>
         </Route>
       </Switch>
@@ -55,19 +64,16 @@ function App() {
       <Route path= '/menuMañana'>
         
           <NavBar/>
-          <div className='row'>
-          <div className='col-8'>
           <Horario/>
+          <div className='flex flex-row'>
           <MenuMañana/>
-          </div>
-            <div className='col-4'>
+
               <Detalle/>
              </div>  
-          </div>
-
-       
+         
       </Route>
         </Switch>
+
         <Switch>
       <Route path= '/menuTarde'>
         
@@ -81,8 +87,14 @@ function App() {
               <Detalle/>
              </div>  
           </div>
+      </Route>
+          </Switch>
+          
 
-       
+          <Switch>
+      <Route path= '/kitchen'>
+        
+          <NavBar/>
       </Route>
         </Switch>
 

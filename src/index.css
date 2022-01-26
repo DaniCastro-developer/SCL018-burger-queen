@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 10px;
+  background: pink;
   margin-left: 30px;
   margin-right: 30px;
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: 'arimo', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -14,9 +19,9 @@ code {
     monospace;
 }
 
-h1 {
-  color: #F752E0;
-  text-align: center;
+h2 {
+  color: #FFFFFF;
+  
 }
 
 img {
