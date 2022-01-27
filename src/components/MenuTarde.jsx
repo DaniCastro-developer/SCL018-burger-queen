@@ -11,8 +11,7 @@ const MenuTarde = () => {
     },[])
 
   return <div className='container'>
-      <h2 className='mt-6'> Menú</h2>
-      <h1> Comida </h1>
+      <h1 className='mt-7'> Comida </h1>
       <div className='flex flex-wrap'>
                     {
                         food.filter(menu => menu.time === 'tarde').filter(e => e.category === 'comida').map((item, id) => (
@@ -29,7 +28,7 @@ const MenuTarde = () => {
                     }
                     </div>
 
-        <h1> Bebestibles </h1>
+        <h1 className='mt-6'> Bebestibles </h1>
         <div className='flex flex-wrap'>
             {
                         food.filter(menu => menu.time === 'tarde').filter(element => element.category === 'bebestible').map((item, id) => (
@@ -46,8 +45,7 @@ const MenuTarde = () => {
                     }
         </div>
 
-        <h1 > Extras </h1>
-
+        <h1 className='mt-6'> Extras </h1>
         <div className='flex flex-wrap'>
             {
                         food.filter(menu => menu.time === 'tarde').filter(element => element.category === 'extras').map((item, id) => (
@@ -64,7 +62,7 @@ const MenuTarde = () => {
                     }
         </div>
 
-<h1 > Agregados </h1>
+<h1 className='mt-6' > Agregados </h1>
 <div className='flex flex-wrap'>
             {
                         food.filter(menu => menu.time === 'tarde').filter(element => element.category === 'adicional').map((item, id) => (

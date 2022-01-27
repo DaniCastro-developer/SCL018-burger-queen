@@ -1,78 +1,116 @@
-import React from 'react'
+import React from "react";
 import {
-    collection,
-    addDoc,
-    onSnapshot,
-  } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
-  import { db } from "../firebase.js";
-import Input from "@material-tailwind/react/Input";
+  collection,
+  addDoc,
+} from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
+import { db } from "../firebase.js";
+import Detalle from './Detalle'
 
-
-import { Link } from 'react-router-dom';
+import MenuMañana from "./MenuMañana.jsx";
+import MenuTarde from "./MenuTarde.jsx";
 //import { nanoid } from 'nanoid'
 
-
 const Horario = () => {
-    
-    const [dato, setDato] = React.useState('')
+  const [name, setName] = React.useState('');
+  const [mesa, setMesa] = React.useState('');
 
-    const agregar = async (e)=> {
-        e.preventDefault()
-    if(!dato.trim()){
-        console.log('Recuerda registrar los datos')
-        return
-    }
-    console.log(dato)
-    }
+  const [changeMenu, setChangeMenu] = React.useState('false');
 
-    return (
-        <div>
-            <h2 className='mt-5'> Datos cliente</h2>
-            <div className='flex'>
-            <div className="w-64 m-2 mt-3">
+  const activarMenu = (modo) => {
+    setChangeMenu(modo)
+  }
+
+  const agregar = async (e) => {
+    e.preventDefault();
+    if (!name.trim() & !mesa.trim()) {
+      console.log("Recuerda registrar los datos");
+      return;
+    }
+    // console.log(name, mesa);
+    try {
+        const docRef = await addDoc(collection(db, 'comanda'),{
+            mesa: mesa,
+            name: name,
+            fecha: Date.now()
+        })
+        setMesa('')
+        setName('')
+        return docRef
+
+    } catch(error){
+        console.log(error)
+    }
+  };
+
+  return (
+    <div className="cotainer flex flex-row">
+        <div >
+      <h2 className="mt-5"> Datos cliente</h2>
+      <div className="flex flex-row">
+        <div className="w-64 m-2">
+          <form className="flex" onSubmit={agregar}>
+
             <h1> Nombre comensal </h1>
-        <form onSubmit={agregar}>
             <input
-               type="text"
-               className='form-control mb-2'
-               placeholder="Nombre cliente"
-               value = {dato}
-               onChange = {e => setDato(e.target.value)}
-               
-        />
-        <button 
-            className='btn btn-dark btn-block btn-sm'
-            > Agregar mesa </button>
-        </form>
+              type="text"
+              className="form-control m-3"
+              placeholder="Nombre cliente"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
 
-        
-        </div>
-        
-            
-            <div className="w-24 m-2 mt-3">
             <h1> Mesa </h1>
-            <Input
-                        type="number"
-                        min="1"
-                        max="15"
-                        name="table"
-                        color="teal"
-                        outline={true}
-                        size ="sm"
-                        placeholder=""
-                    />
-                </div>
-               
-            </div>
-            
+            <input
+              type="number"
+              className="form-control m-3"
+              placeholder="Número de mesa"
+              value={mesa}
+              onChange={(e) => setMesa(e.target.value)}
+            />
 
-            <h2 className="mt-6">  Selecciona el menú </h2>
-            <Link to={`/menuMañana`}> <button className="h-10 px-5 m-2 text-pink-100 transition-colors duration-150 bg-pink-500 rounded-lg focus:shadow-outline hover:bg-pink-600"> Mañana </button> </Link> 
-            <Link to={`/menuTarde`}><button className="h-10 px-5 m-2 text-pink-100 transition-colors duration-150 bg-pink-500 rounded-lg focus:shadow-outline hover:bg-pink-600" > Tarde </button> </Link>
-                
+            <button className="btn btn-dark btn-block btn-sm">
+              {" "}
+              Agregar mesa{" "}
+            </button>
+          </form>
         </div>
-        
-    )
-}
+      </div>
 
-export default Horario
+
+
+<div className="container flex flex-row">
+  <div>
+<h2 className='mt-6'> Menú</h2>
+        <button 
+        className="h-10 w-40 px-5 m-2 text-pink-100 transition-colors duration-150 bg-pink-500 rounded-lg focus:shadow-outline hover:bg-pink-600"
+        onClick={()=> activarMenu(true)}
+        >
+          mañana
+        </button>
+        <button className="h-10 w-40 px-5 m-2 text-pink-100 transition-colors duration-150 bg-pink-500 rounded-lg focus:shadow-outline hover:bg-pink-600"
+        onClick={()=> activarMenu(false)}
+        >
+          Tarde
+        </button>
+       
+        
+
+      {
+          changeMenu ? <MenuMañana/> : <MenuTarde/>
+      }
+      </div>
+      
+      
+      <div>
+      <Detalle/>
+      </div>
+      </div>
+      </div>
+   
+     
+      </div>
+
+  );
+};
+
+export default Horario;

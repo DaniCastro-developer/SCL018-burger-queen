@@ -12,9 +12,6 @@ const MenuMañana = () => {
 
     
   return <div className='container'>     
-
-<h2 className='mt-6'> Menú </h2>
-
             <h1 className='mt-7'> Comida </h1>
             <div className='flex flex-wrap'>
                     {
