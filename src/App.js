@@ -16,17 +16,18 @@ import NavBar from './components/NavBar';
 import Login from './components/Login'
 import Registro from './components/Registro'
 import Roles from './components/Roles'
-import Carrusel from './components/Carrusel';
+import Data from './components/Data'
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route path= '/' exact>
-          <div>
+          <div className='flex flex-col'> 
             <Bienvenida/>
+            <Data/> 
            {/*  <Carrusel/> */}
-          </div>
+           </div>
         </Route>
       </Switch>
 
@@ -78,14 +79,10 @@ function App() {
       <Route path= '/menuTarde'>
         
           <NavBar/>
-          <div className='row'>
-          <div className='col-8'>
           <Horario/>
+          <div className='flex flex-row'>
           <MenuTarde/>
-          </div>
-            <div className='col-4'>
-              <Detalle/>
-             </div>  
+              <Detalle/> 
           </div>
       </Route>
           </Switch>

@@ -17,7 +17,7 @@ const Detalle = () => {
 
     return (
         <div className='container'>
-           <h2> Detalle compra </h2>
+           <h1> Detalle compra </h1>
             {/*  {
                 product.map((item, id) => {
                     <li key= {id}> {item.name} - ${item.price} </li>

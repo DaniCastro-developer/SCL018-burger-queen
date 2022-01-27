@@ -43,8 +43,7 @@
     },
     {
         "id": 6,
-        "name": "Helado",
-        "tamaño": "simple",
+        "name": "Helado simple",
         "price": 10,
         "category": "comida",
         "time": "tarde",
@@ -52,8 +51,7 @@
     },
     {
         "id": 7,
-        "name": "Helado",
-        "tamaño": "doble",
+        "name": "Helado doble",
         "price": 15,
         "category": "comida",
         "time": "tarde",

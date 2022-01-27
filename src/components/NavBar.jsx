@@ -9,7 +9,7 @@ const NavBar = ({fixed}) => {
         <div className="w-full px-4">
           <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-pink-500 rounded">
             <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-                  <div className="w-3/12 sm:w-4/12 px-4">
+                  <div className="w-8/12 sm:w-4/12 px-4">
                   <img src = {logo} alt='logo-silecio-bruno' className="rounded border-none"></img>
                   </div>
                 <ul className="flex flex-row lg:flex-row list-none lg:ml-auto">

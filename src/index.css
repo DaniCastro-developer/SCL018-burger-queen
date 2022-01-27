@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -21,11 +21,37 @@ code {
 
 h2 {
   color: #FFFFFF;
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+  line-height: 1;  
+  margin: 1rem;
+}
+
+h3 {
+  color: #FFFFFF;
+  font-family: 'Pacifico', cursive;
+  font-size: 1.5rem;
+  line-height: 1;  
+  margin: 1rem;
+}
+
+h1 {
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-top: 1.5rem;
   
 }
 
 img {
   width: 30%;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+  margin: 1.5 rem 0 rem 1.5 rem 0 rem;
+
+  
 }
 
 .NavBar {
