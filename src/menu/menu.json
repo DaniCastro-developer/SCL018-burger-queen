@@ -62,77 +62,80 @@
         "name": "Chispitas",
         "price": 5,
         "category": "extras",
-        "time": "tarde"
+        "time": "tarde",
+        "image": "https://assets.epuzzle.info/puzzle/001/257/original.jpg"
     },
     {
         "id": 9,
         "name": "Galletas",
         "price": 5,
         "category": "extras",
-        "time": "tarde"
+        "time": "tarde",
+        "image": "http://3.bp.blogspot.com/-gDsn_HlOxno/Ua9z3VoP6gI/AAAAAAAABAA/1wZtwWbcheU/s1600/20130522_194019.jpg"
     },
     {
         "id": 10,
-        "name": "Galletas",
-        "price": 5,
-        "category": "extras",
-        "time": "tarde"
-    },
-    {
-        "id": 11,
         "name": "Kit Kat",
         "price": 5,
         "category": "extras",
-        "time": "tarde"
+        "time": "tarde",
+        "image": "https://cdn.pixabay.com/photo/2017/11/02/00/26/chocolate-2909818_960_720.jpg"
     },
     {
-        "id": 12,
+        "id": 11,
         "name": "Salsa de chocolate",
         "price": 1,
         "category": "adicional",
-        "time": "tarde"
+        "time": "tarde",
+        "image": "https://jumbo.vtexassets.com/arquivos/ids/173864/355983.jpg?v=636367790793200000"
     },
     {
-        "id": 13,
+        "id": 12,
         "name": "Salsa de frutilla",
         "price": 1,
         "category": "adicional",
-        "time": "tarde"
+        "time": "tarde",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8X0Lg0X3Mm5nhtM1BAVFdq_n2sWNNVsdPeyemfhzXiHAe56JlrOpNS6gYZg9ZXmyAZKA&usqp=CAU"
     },
     {
-        "id": 14,
+        "id": 13,
         "name": "Baño de chocolate",
         "price": 1,
         "category": "adicional",
-        "time": "tarde"
+        "time": "tarde",
+        "image": "https://wykbakery.files.wordpress.com/2012/06/chocolatefundido1.jpg"
     },
     {
-        "id": 15,
+        "id": 14,
         "name": "Agua chica",
         "price": 5,
         "category": "bebestible",
-        "time": "tarde"
+        "time": "tarde",
+        "image": "https://www.prisa.cl/catalog/detalle/images/medium/82040_1.jpg"
     },
     {
-        "id": 16,
+        "id": 15,
         "name": "Agua grande",
         "price": 7,
         "category": "bebestible",
-        "time": "tarde"
+        "time": "tarde",
+        "image": "https://mlzvcqhqkg62.i.optimole.com/3Z7FgGg-71FkG74a/w:auto/h:auto/q:75/https://www.mercadoditutti.cl/wp-content/uploads/BEAG012-1-1.jpg"
     },
     {
-        "id": 15,
+        "id": 16,
         "name": "Bebida chica",
         "price": 7,
         "category": "bebestible",
-        "time": "tarde"
+        "time": "tarde",
+        "image": "https://latiapeta.cl/wp-content/uploads/2021/02/bebidas-de-lata-la-tia-peta.jpg"
     },
     {
-        "id": 15,
+        "id": 17,
         "name": "Bebida grande",
         "price": 10,
         "category": "bebestible",
-        "time": "tarde"
+        "time": "tarde",
+        "image": "https://miskyperu.cl/wp-content/uploads/2020/04/bebida500ml.jpg"
     }
 ]
 }

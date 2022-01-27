@@ -13,11 +13,13 @@ const MenuMañana = () => {
     
   return <div className='container'>     
 
-            <h1 className='mt-7 text-3xl'> Comida </h1>
-            
+<h2 className='mt-6'> Menú </h2>
+
+            <h1 className='mt-7'> Comida </h1>
+            <div className='flex flex-wrap'>
                     {
                         food.filter(menu => menu.time === 'mañana').filter(element => element.category === 'comida').map((item, id) => (
-                    <div key={id} className='flex flex-row'>
+                    <div key={id} className='mr-4' >
                          <div className="bg-pink-100 my-3 w-40 h-35 overflow-hidden rounded-lg shadow-lg">
                             <img className="object-cover w-40 h-20" src={item.image} alt= {item.name} />
                             <div className="px-4 py-2" id={item.id}>
@@ -29,11 +31,13 @@ const MenuMañana = () => {
                 
                 ))
                     }
+            </div>
     
-            <h1 className='mt-6 text-3xl'> Bebestibles </h1>
+            <h1 className='mt-6'> Bebestibles </h1>
+            <div className='flex flex-wrap'>
             {
                         food.filter(menu => menu.time === 'mañana').filter(element => element.category === 'bebestible').map((item, id) => (
-                            <div key={id} className='flex flex-row'>
+                            <div key={id} className='mr-4'>
                             <div className="bg-pink-100 my-3 w-40 h-35 overflow-hidden rounded-lg shadow-lg">
                                <img className="object-cover w-40 h-20" src={item.image} alt= {item.name} />
                                <div className="px-4 py-2" id={item.id}>
@@ -44,6 +48,7 @@ const MenuMañana = () => {
                        </div>
                 ))
                     }
+                    </div>
             
        </div>;
 };

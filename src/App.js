@@ -57,7 +57,6 @@ function App() {
         <Route path= '/time'>
          <NavBar />
           <Horario/>
-          <hr/>
         </Route>
       </Switch>
       

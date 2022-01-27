@@ -1,53 +1,77 @@
 import React from 'react'
-import menu from '../menu/menu.json'
+import {
+    collection,
+    addDoc,
+    onSnapshot,
+  } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
+  import { db } from "../firebase.js";
+import Input from "@material-tailwind/react/Input";
+
 
 import { Link } from 'react-router-dom';
 //import { nanoid } from 'nanoid'
 
 
 const Horario = () => {
-    const data = menu.products;
     
-    const [products, setProducts] = React.useState([]);
-    const [food, setFood] = React.useState([])
+    const [dato, setDato] = React.useState('')
 
-    React.useEffect(()=> {
-       setProducts(data)
-        setFood(data)
-    },[])
-
-    const openMenu = (select) => {
-        if (select === 'desayuno'){
-        const desayuno = data.filter((p)=> p.time === 'mañana');
-        const comida = desayuno.filter((p)=> p.category === 'comida');
-        setProducts(desayuno)
-        setFood(comida)
-        
-    } else if(select === 'tarde') {
-        const tarde = data.filter((p)=> p.time === 'tarde');
-        const comida = tarde.filter((p)=> p.category === 'comida');
-        setProducts(tarde)
-        setFood(comida)
-    } else {
-        console.log('error')
+    const agregar = async (e)=> {
+        e.preventDefault()
+    if(!dato.trim()){
+        console.log('Recuerda registrar los datos')
+        return
     }
+    console.log(dato)
     }
 
-
-     
     return (
         <div>
+            <h2 className='mt-5'> Datos cliente</h2>
             <div className='flex'>
-            <h3> Nombre comensal </h3>
-            <h3> Mesa </h3>
-            <hr/>
-            </div>
+            <div className="w-64 m-2 mt-3">
+            <h1> Nombre comensal </h1>
+        <form onSubmit={agregar}>
+            <input
+               type="text"
+               className='form-control mb-2'
+               placeholder="Nombre cliente"
+               value = {dato}
+               onChange = {e => setDato(e.target.value)}
+               
+        />
+        <button 
+            className='btn btn-dark btn-block btn-sm'
+            > Agregar mesa </button>
+        </form>
 
-            <h2> Selecciona el menú </h2>
+        
+        </div>
+        
+            
+            <div className="w-24 m-2 mt-3">
+            <h1> Mesa </h1>
+            <Input
+                        type="number"
+                        min="1"
+                        max="15"
+                        name="table"
+                        color="teal"
+                        outline={true}
+                        size ="sm"
+                        placeholder=""
+                    />
+                </div>
+               
+            </div>
+            
+
+            <h2 className="mt-6">  Selecciona el menú </h2>
             <Link to={`/menuMañana`}> <button className="h-10 px-5 m-2 text-pink-100 transition-colors duration-150 bg-pink-500 rounded-lg focus:shadow-outline hover:bg-pink-600"> Mañana </button> </Link> 
             <Link to={`/menuTarde`}><button className="h-10 px-5 m-2 text-pink-100 transition-colors duration-150 bg-pink-500 rounded-lg focus:shadow-outline hover:bg-pink-600" > Tarde </button> </Link>
                 
         </div>
+        
     )
 }
 

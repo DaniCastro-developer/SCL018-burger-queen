@@ -11,10 +11,12 @@ const MenuTarde = () => {
     },[])
 
   return <div className='container'>
+      <h2 className='mt-6'> Menú</h2>
       <h1> Comida </h1>
+      <div className='flex flex-wrap'>
                     {
                         food.filter(menu => menu.time === 'tarde').filter(e => e.category === 'comida').map((item, id) => (
-                            <div key={id} className='flex flex-row'>
+                            <div key={id} className='mr-4'>
                             <div className="bg-pink-100 my-3 w-40 h-35 overflow-hidden rounded-lg shadow-lg">
                                <img className="object-cover w-40 h-20" src={item.image} alt= {item.name} />
                                <div className="px-4 py-2" id={item.id}>
@@ -25,11 +27,13 @@ const MenuTarde = () => {
                        </div>
                 ))
                     }
+                    </div>
 
         <h1> Bebestibles </h1>
+        <div className='flex flex-wrap'>
             {
                         food.filter(menu => menu.time === 'tarde').filter(element => element.category === 'bebestible').map((item, id) => (
-                            <div key={id} className='flex flex-row'>
+                            <div key={id} className='mr-4'>
                             <div className="bg-pink-100 my-3 w-40 h-35 overflow-hidden rounded-lg shadow-lg">
                                <img className="object-cover w-40 h-20" src={item.image} alt= {item.name} />
                                <div className="px-4 py-2" id={item.id}>
@@ -40,12 +44,14 @@ const MenuTarde = () => {
                        </div>
                 ))
                     }
-
+        </div>
 
         <h1 > Extras </h1>
+
+        <div className='flex flex-wrap'>
             {
                         food.filter(menu => menu.time === 'tarde').filter(element => element.category === 'extras').map((item, id) => (
-                            <div key={id} className='flex flex-row'>
+                            <div key={id} className='mr-4'>
                             <div className="bg-pink-100 my-3 w-40 h-35 overflow-hidden rounded-lg shadow-lg">
                                <img className="object-cover w-40 h-20" src={item.image} alt= {item.name} />
                                <div className="px-4 py-2" id={item.id}>
@@ -56,11 +62,13 @@ const MenuTarde = () => {
                        </div>
                 ))
                     }
+        </div>
 
 <h1 > Agregados </h1>
+<div className='flex flex-wrap'>
             {
                         food.filter(menu => menu.time === 'tarde').filter(element => element.category === 'adicional').map((item, id) => (
-                            <div key={id} className='flex flex-row'>
+                            <div key={id} className='mr-4'>
                             <div className="bg-pink-100 my-3 w-40 h-35 overflow-hidden rounded-lg shadow-lg">
                                <img className="object-cover w-40 h-20" src={item.image} alt= {item.name} />
                                <div className="px-4 py-2" id={item.id}>
@@ -71,6 +79,7 @@ const MenuTarde = () => {
                        </div>
                 ))
                     }
+                    </div>
   </div>;
 };
 
