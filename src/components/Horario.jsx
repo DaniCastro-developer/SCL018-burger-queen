@@ -1,18 +1,20 @@
 import React from "react";
-import {
+/* import {
   collection,
   addDoc,
 } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
-import { db } from "../firebase.js";
+import { db } from "../firebase.js"; */
 import Detalle from './Detalle'
 
 import MenuMañana from "./MenuMañana.jsx";
 import MenuTarde from "./MenuTarde.jsx";
 //import { nanoid } from 'nanoid'
+import { UserContext } from "../context/UserProvider";
+
 
 const Horario = () => {
-  const [name, setName] = React.useState('');
-  const [mesa, setMesa] = React.useState('');
+  const {cliente, setCliente} = React.useContext(UserContext)
+ 
 
   const [changeMenu, setChangeMenu] = React.useState('false');
 
@@ -20,7 +22,7 @@ const Horario = () => {
     setChangeMenu(modo)
   }
 
-  const agregar = async (e) => {
+/*   const agregar = async (e) => {
     e.preventDefault();
     if (!name.trim() & !mesa.trim()) {
       console.log("Recuerda registrar los datos");
@@ -40,7 +42,7 @@ const Horario = () => {
     } catch(error){
         console.log(error)
     }
-  };
+  }; */
 
   return (
     <div className="cotainer flex flex-row">
@@ -48,15 +50,16 @@ const Horario = () => {
       <h2 className="mt-5"> Datos cliente</h2>
       <div className="flex flex-row">
         <div className="w-64 m-2">
-          <form className="flex" onSubmit={agregar}>
+          <form className="flex">
 
             <h1> Nombre comensal </h1>
             <input
               type="text"
+              name="name"
               className="form-control m-3"
               placeholder="Nombre cliente"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={cliente.name}
+              onChange={(e) => setCliente({...cliente, name: e.target.value})}
             />
 
             <h1> Mesa </h1>
@@ -64,14 +67,9 @@ const Horario = () => {
               type="number"
               className="form-control m-3"
               placeholder="Número de mesa"
-              value={mesa}
-              onChange={(e) => setMesa(e.target.value)}
+              value={cliente.table}
+              onChange={(e) => setCliente({...cliente, table:e.target.value})}
             />
-
-            <button className="btn btn-dark btn-block btn-sm">
-              {" "}
-              Agregar mesa{" "}
-            </button>
           </form>
         </div>
       </div>

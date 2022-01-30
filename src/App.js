@@ -10,7 +10,9 @@ import Horario from "./components/Horario";
 import NavBar from "./components/NavBar";
 import Login from "./components/Login";
 import Registro from "./components/Registro";
+import Detalle from "./components/Detalle";
 import Roles from "./components/Roles";
+import UserProvider from "./context/UserProvider";
 
 
 function App() {
@@ -47,10 +49,15 @@ function App() {
       </Switch>
       
       <Switch>
+       
         <Route path="/mesero">
+        <UserProvider>
           <NavBar />
           <Horario />
+          <Detalle/>
+          </UserProvider>
         </Route>
+        
       </Switch>
 
       <Switch>

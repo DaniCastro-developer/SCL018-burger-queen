@@ -4,6 +4,7 @@ import {
   query,
   onSnapshot,
   doc,
+  getDoc,
   deleteDoc
 } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
 import { db } from "../firebase.js";
@@ -14,21 +15,27 @@ const Data = () => {
   React.useEffect(() => {
     const obtenerDatos = async () => {
       try {
-        const q = query(collection(db, "comanda"));
-        await onSnapshot(q, (querySnapshot) => {
-          const pedidos = [];
-          querySnapshot.forEach((doc) => {
-            pedidos.push({ ...doc.data(), id: doc.id });
-          });
-
+        const docRef = doc(db, "comanda", "SjZgQ315SvwkcZhaZpKz");
+        const docSnap = await getDoc(docRef);
+        
+        if (docSnap.exists()) {
+          const pedidos = []
+            docSnap.forEach((doc) => {
+            pedidos.push({...docSnap.data(), id: doc.id})
+          })
           setDatos(pedidos);
-        });
-      } catch (error) {
+        }
+          
+        } catch (error) {
         console.log(error);
       }
     };
+
     obtenerDatos();
+    console.log("No such document!");
   }, []);
+
+
 
   const eliminar = async (id) => {
       try {
@@ -49,8 +56,8 @@ const Data = () => {
           <ul className="list-group">
             {datos.map((item) => (
               <li className="list-group-item" key={item.id}>
-                <p> Cliente: {item.comensal}</p>
-                <p> Mesa:  {item.mesa}</p>
+                {/* <p> Cliente: {item.comensal}</p> */}
+                {/* <p> Mesa:  {item.mesa}</p> */}
                 <div className="inline-flex">
                   <button className="bg-pink-100 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
                     -
