@@ -41,7 +41,7 @@ function App() {
       </Switch>
 
       <Switch>
-        <Route path="/role" exact>
+        <Route path="/role">
           <div>
             <Roles />
           </div>
@@ -52,9 +52,10 @@ function App() {
        
         <Route path="/mesero">
         <UserProvider>
+          
           <NavBar />
           <Horario />
-          <Detalle/>
+          
           </UserProvider>
         </Route>
         

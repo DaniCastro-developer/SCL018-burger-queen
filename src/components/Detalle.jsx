@@ -5,7 +5,7 @@ import { UserContext } from '../context/UserProvider'
 
 const Detalle = () => {
     
-    const {cliente} = React.useContext(UserContext) 
+    const {cliente, pedido} = React.useContext(UserContext) 
 
 
     return (
@@ -14,6 +14,14 @@ const Detalle = () => {
            <div id= 'detalle'>
             <p> Cliente: {cliente.name} </p>
             <p> Mesa: {cliente.table} </p>
+
+            <h1> Productos </h1>
+            {
+                pedido.map(e => (
+                    <li> {e.name} ${e.price} </li>
+                ))
+            }
+            
             <Data/>
             <button className="h-18 px-5 m-2 text-pink-100 transition-colors duration-150 bg-gray-600 rounded-lg focus:shadow-outline hover:bg-gray-800 font-bold py-2 "> Enviar pedido </button> 
             </div>
