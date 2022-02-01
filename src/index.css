@@ -19,6 +19,11 @@ code {
     monospace;
 }
 
+p {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
 h2 {
   color: #FFFFFF;
   font-family: 'Pacifico', cursive;

@@ -6,13 +6,13 @@ import {
   Route,
 } from "react-router-dom";
 import Bienvenida from "./components/Bienvenida";
-import Horario from "./components/Horario";
+import Mesero from "./components/Mesero";
 import NavBar from "./components/NavBar";
 import Login from "./components/Login";
 import Registro from "./components/Registro";
-import Detalle from "./components/Detalle";
 import Roles from "./components/Roles";
 import UserProvider from "./context/UserProvider";
+import Kitchen from "./components/Kitchen";
 
 
 function App() {
@@ -52,10 +52,8 @@ function App() {
        
         <Route path="/mesero">
         <UserProvider>
-          
           <NavBar />
-          <Horario />
-          
+          <Mesero />
           </UserProvider>
         </Route>
         
@@ -63,7 +61,10 @@ function App() {
 
       <Switch>
         <Route path="/kitchen">
+          <UserProvider>
           <NavBar />
+          <Kitchen/>
+          </UserProvider>
         </Route>
       </Switch>
     </Router>

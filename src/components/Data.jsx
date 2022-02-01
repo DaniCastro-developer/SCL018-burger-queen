@@ -1,53 +1,15 @@
 import React from "react";
-import {
-  doc,
-  getDoc,
-  deleteDoc
-} from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
-import { db } from "../firebase.js";
+import { UserContext } from '../context/UserProvider'
+
 
 const Data = () => {
-  const [datos, setDatos] = React.useState([]);
-
- /*  React.useEffect(() => {
-    const obtenerDatos = async () => {
-      try {
-
-        const q = await query(collection(db, "comanda"), orderBy('datePost', 'desc'));
-        onSnapshot(q, (querySnapshot) => {
-          const pedidos = [];
-          querySnapshot.forEach((doc) => {
-          pedidos.push({ ...doc.data(), id: doc.id });        
-        }
-        
-      }
-        catch (error) {
-        console.log(error);
-      }
-    };
-
-    obtenerDatos();
-    console.log("No such document!");
-  }, []); */
-
-
-
-  const eliminar = async (id) => {
-      try {
-        const confirm = window.confirm('¿Quieres eliminar esta publicación?');
-        if (confirm) {
-          await deleteDoc(doc(db, 'comanda', id));
-        }
-      } catch (error) {
-          console.log(error)
-      }
-  }
+  const {datos, deleteOrder} =  React.useContext(UserContext)  
 
   return (
     <div className="container mt-3">
       <div className="row">
         <div className="col-md-6">
-          <h1>Lista del pedido</h1>
+          <h1>Lista de pedidos</h1>
           <ul className="list-group">
             {datos.map((item) => (
               <li className="list-group-item" key={item.id}>
@@ -64,7 +26,7 @@ const Data = () => {
                 {(item.cantidad)} - {item.producto}
                 <button 
                 className="bg-red-500 text-gray-200 rounded hover:bg-red-400 px-6 py-2 focus:outline-none mx-1 my-1 btn-sm text-xs"
-                onClick={() => eliminar(item.id)}
+                onClick={() => deleteOrder(item.id)}
                 >
                   borrar
                 </button>
