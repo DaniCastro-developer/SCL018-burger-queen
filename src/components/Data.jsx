@@ -1,8 +1,5 @@
 import React from "react";
 import {
-  collection,
-  query,
-  onSnapshot,
   doc,
   getDoc,
   deleteDoc

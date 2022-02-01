@@ -13,13 +13,17 @@ const MenuMañana = () => {
         setFood(data)
     },[])
 
- const agregarPedido = (item) => {
+ const agregarPedido = (plato) => {
       const product = {
-          name: item.name,
-          price: item.price
-      }
-        setPedido([...pedido, product])
+          name: plato.name,
+          price: plato.price,
+          id: plato.id,
+          count:1
+      } 
+          setPedido([...pedido, product])
     }
+
+    
   return <div className='container'>     
             <h1 className='mt-7'> Comida </h1>
             <div className='flex flex-wrap'>
