@@ -13,6 +13,10 @@ const MenuMañana = () => {
         setFood(data)
     },[])
 
+    /* const agregar = (id) => {
+        const array = pedido.map(item => item.id === id ? {...item, count: item.count +1} : item)
+        setPedido(array)
+    } */
  const agregarPedido = (plato) => {
       const product = {
           name: plato.name,
@@ -20,6 +24,15 @@ const MenuMañana = () => {
           id: plato.id,
           count:1
       } 
+
+      if(pedido.find(item => plato.id === item.id)){
+
+       // agregar(plato.id)
+        const array = pedido.map(item => item.id === plato.id ? {...item, count: item.count +1} : item)
+        setPedido(array)
+        return 
+        
+      }
           setPedido([...pedido, product])
     }
 

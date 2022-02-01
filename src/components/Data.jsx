@@ -9,28 +9,26 @@ import { db } from "../firebase.js";
 const Data = () => {
   const [datos, setDatos] = React.useState([]);
 
-  React.useEffect(() => {
+ /*  React.useEffect(() => {
     const obtenerDatos = async () => {
       try {
-        const docRef = doc(db, "comanda", "SjZgQ315SvwkcZhaZpKz");
-        const docSnap = await getDoc(docRef);
-        
-        if (docSnap.exists()) {
-          const pedidos = []
-            docSnap.forEach((doc) => {
-            pedidos.push({...docSnap.data(), id: doc.id})
-          })
-          setDatos(pedidos);
+
+        const q = await query(collection(db, "comanda"), orderBy('datePost', 'desc'));
+        onSnapshot(q, (querySnapshot) => {
+          const pedidos = [];
+          querySnapshot.forEach((doc) => {
+          pedidos.push({ ...doc.data(), id: doc.id });        
         }
-          
-        } catch (error) {
+        
+      }
+        catch (error) {
         console.log(error);
       }
     };
 
     obtenerDatos();
     console.log("No such document!");
-  }, []);
+  }, []); */
 
 
 
@@ -53,8 +51,8 @@ const Data = () => {
           <ul className="list-group">
             {datos.map((item) => (
               <li className="list-group-item" key={item.id}>
-                {/* <p> Cliente: {item.comensal}</p> */}
-                {/* <p> Mesa:  {item.mesa}</p> */}
+                <p> Cliente: {item.comensal}</p>
+                <p> Mesa:  {item.mesa}</p>
                 <div className="inline-flex">
                   <button className="bg-pink-100 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
                     -
