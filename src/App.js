@@ -13,6 +13,7 @@ import Registro from "./components/Registro";
 import Roles from "./components/Roles";
 import UserProvider from "./context/UserProvider";
 import Kitchen from "./components/Kitchen";
+import OrderReady from "./components/OrderReady";
 
 
 function App() {
@@ -67,6 +68,16 @@ function App() {
           </UserProvider>
         </Route>
       </Switch>
+
+      <Switch>
+        <Route path="/ready">
+          <UserProvider>
+          <NavBar />
+          <OrderReady/>
+          </UserProvider>
+        </Route>
+      </Switch>
+
     </Router>
   );
 }

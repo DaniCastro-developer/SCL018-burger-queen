@@ -1,9 +1,11 @@
 import React from 'react';
-import Data from './Data'
+import Orders from './Orders'
 
 const Kitchen = () => {
   return <div>
-      <Data/>
+    <div className='flex flex-row'>
+      <Orders/>
+      </div>
   </div>;
 };
 

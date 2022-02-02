@@ -1,14 +1,8 @@
 import React from "react";
-/* import {
-  collection,
-  addDoc,
-} from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
-import { db } from "../firebase.js"; */
 import Detalle from "./Detalle";
 
 import MenuMañana from "./MenuMañana.jsx";
 import MenuTarde from "./MenuTarde.jsx";
-//import { nanoid } from 'nanoid'
 import { UserContext } from "../context/UserProvider";
 
 const Mesero = () => {
@@ -20,30 +14,9 @@ const Mesero = () => {
     setChangeMenu(modo);
   };
 
-  /*   const agregar = async (e) => {
-    e.preventDefault();
-    if (!name.trim() & !mesa.trim()) {
-      console.log("Recuerda registrar los datos");
-      return;
-    }
-    // console.log(name, mesa);
-    try {
-        const docRef = await addDoc(collection(db, 'comanda'),{
-            mesa: mesa,
-            name: name,
-            fecha: Date.now()
-        })
-        setMesa('')
-        setName('')
-        return docRef
-
-    } catch(error){
-        console.log(error)
-    }
-  }; */
 
   return (
-    <div className="cotainer flex flex-row">
+    <div className="cotainer">
       <div>
         <h2 className="mt-5"> Datos cliente</h2>
         <div className="flex flex-row">
@@ -93,7 +66,7 @@ const Mesero = () => {
               Tarde
             </button>
 
-            <div className="flex flex-wrap">
+            <div className="">
               {changeMenu ? <MenuMañana /> : <MenuTarde />}
             </div>
           </div>

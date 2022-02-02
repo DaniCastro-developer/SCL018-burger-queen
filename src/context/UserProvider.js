@@ -3,7 +3,10 @@ import {
     addDoc,
     collection,
     deleteDoc,
-    doc
+    doc,
+    query,
+    updateDoc, 
+    onSnapshot
   } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
   import { db } from "../firebase.js";
 
@@ -14,7 +17,7 @@ const UserProvider = (props) => {
     // objeto con nombre cliente y mesa
     const users = {
         name: '',
-        table: '',
+        table: ''
     }
 
 
@@ -22,6 +25,8 @@ const UserProvider = (props) => {
 const [cliente, setCliente] = React.useState(users)
 const [pedido, setPedido] = React.useState([])
 const [datos, setDatos] = React.useState([]);
+const [stateOrder, setStateOrder] = React.useState(false)
+
 
   // eliminar un producto
   const eliminar = (dish) => {
@@ -83,8 +88,8 @@ const [datos, setDatos] = React.useState([]);
     try {
         const docRef = await addDoc(collection(db, 'comanda'),{
             hour: time,
-            table: cliente.name,
-            name: cliente.table,
+            table: cliente.table,
+            name: cliente.name,
             order: pedido,
             total: total,
             status: "Pendiente"
@@ -99,32 +104,43 @@ const [datos, setDatos] = React.useState([]);
     }
   };
 
- /*  React.useEffect(() => {
-    const readOrder = async () => {
-      try {
-
-        const q = await query(collection(db, "comanda"), orderBy('datePost', 'desc'));
-        onSnapshot(q, (querySnapshot) => {
-          const pedidos = [];
-          querySnapshot.forEach((doc) => {
-          pedidos.push({ ...doc.data(), id: doc.id });        
+  React.useEffect(() => {
+  /*   const readData = async () => {
+        try {
+            const q = await query(collection(db, 'comanda'));
+               await  onSnapshot(q, (querySnapshot) => {
+                    const order = [];
+                    querySnapshot.forEach((doc) => {
+                    order.push({ ...doc.data(), id: doc.id });
+                    console.log(order)
+                    setDatos(order)
+                    
+            });
+        })
+        } catch (error) {
+            console.log(error)
         }
-        
-      }
-        catch (error) {
-        console.log(error);
-      }
-    };
 
-    readOrder();
-    console.log("No such document!");
-  }, []);  */
+    }
+    readData() */
+    onSnapshot(
+      collection(db, "comanda"),
+      (snapshot) => {
+        const orders = snapshot.docs.map((order) => {
+          return { ...order.data(), id: order.id };
+        })
+        //console.log(orders)
+        setDatos(orders);
+      }
+    )
+
+}, [])
 
   // borrar una comanda
 
-  const deleteOrder = async (id) => {
+  const deleteOrder = async (id, status) => {
     try {
-      const confirm = window.confirm('¿Quieres eliminar esta publicación?');
+      const confirm = window.confirm('¿Quieres eliminar este pedido?');
       if (confirm) {
         await deleteDoc(doc(db, 'comanda', id));
       }
@@ -132,6 +148,22 @@ const [datos, setDatos] = React.useState([]);
         console.log(error)
     }
 }
+
+// editar un documento
+
+const editOrder = async (id, status) => {
+  setStateOrder(true)
+  try {
+    const collectionRef = doc(db, 'comanda', id);
+  await updateDoc(collectionRef, {
+    status: status
+  });
+    
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 
  const totalProps = {
      cliente, 
@@ -144,7 +176,10 @@ const [datos, setDatos] = React.useState([]);
      agregarFire,
      eliminar,
      datos, 
-     deleteOrder
+     agregar,
+     deleteOrder,
+     editOrder,
+     stateOrder
  }
 
 

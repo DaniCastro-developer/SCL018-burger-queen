@@ -13,6 +13,13 @@ const NavBar = ({fixed}) => {
                   <img src = {logo} alt='logo-silecio-bruno' className="rounded border-none"></img>
                   </div>
                 <ul className="flex flex-row lg:flex-row list-none lg:ml-auto">
+                <li className="nav-item">
+                    <Link to = {`/ready`}
+                      className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    >
+                      Pedidos Listos
+                    </Link>
+                  </li>
                   <li className="nav-item">
                     <Link to = {`/role`}
                       className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
