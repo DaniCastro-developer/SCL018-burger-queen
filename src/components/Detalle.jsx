@@ -4,7 +4,7 @@ import { UserContext } from '../context/UserProvider'
 
 const Detalle = () => {
     
-    const {cliente, pedido, eliminar, agregar, total, quitar, agregarFire} = React.useContext(UserContext) 
+    const {cliente, pedido, eliminar, agregar, total, quitar, agregarFire, error} = React.useContext(UserContext) 
     
 
     return (
@@ -63,7 +63,9 @@ const Detalle = () => {
            > Enviar pedido </button> 
             </div>
             </div>
-            
+            {
+                error ? <span className="text-sm text-red-600 text-center mt-4"> {error} </span> : null
+            }
         </div>
        
     )

@@ -4,10 +4,9 @@ import {
     collection,
     deleteDoc,
     doc,
-    query,
     updateDoc, 
     onSnapshot
-  } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
+  } from "firebase/firestore";
   import { db } from "../firebase.js";
 
 export const UserContext = React.createContext()
@@ -26,7 +25,7 @@ const [cliente, setCliente] = React.useState(users)
 const [pedido, setPedido] = React.useState([])
 const [datos, setDatos] = React.useState([]);
 const [stateOrder, setStateOrder] = React.useState(false)
-
+const [error, setError] = React.useState(null)
 
   // eliminar un producto
   const eliminar = (dish) => {
@@ -82,6 +81,11 @@ const [stateOrder, setStateOrder] = React.useState(false)
     const time = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
     if (!cliente.name.trim() & !cliente.table.trim()) {
       console.log("Recuerda registrar los datos");
+      setError("Recuerda registrar los datos del cliente")
+      return;
+    } else if (pedido.length === 0){
+      console.log("El pedido está vacío");
+      setError("El pedido está vacío")
       return;
     }
     // console.log(name, mesa);
@@ -97,6 +101,7 @@ const [stateOrder, setStateOrder] = React.useState(false)
         })
         
         cleanOrder()
+        setError(null)
         return docRef
 
     } catch(error){
@@ -179,7 +184,8 @@ const editOrder = async (id, status) => {
      agregar,
      deleteOrder,
      editOrder,
-     stateOrder
+     stateOrder, 
+     error
  }
 
 
