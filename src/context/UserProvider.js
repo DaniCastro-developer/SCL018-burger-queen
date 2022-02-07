@@ -8,6 +8,7 @@ import {
     onSnapshot
   } from "firebase/firestore";
   import { db } from "../firebase.js";
+ // import { nanoid } from 'nanoid'
 
 export const UserContext = React.createContext()
 
@@ -26,6 +27,73 @@ const [pedido, setPedido] = React.useState([])
 const [datos, setDatos] = React.useState([]);
 const [stateOrder, setStateOrder] = React.useState(false)
 const [error, setError] = React.useState(null)
+
+// chrono
+// crear estado inicial (objeto que se quede en un array[time])
+
+const timeFormat = {
+  ms:0, 
+  s:0, 
+  m:0, 
+  h:0, 
+  d:0
+}
+const [time, setTime] = React.useState(timeFormat)
+const [interv, setInterv] = React.useState()
+const [status, setStatus] = React.useState(0)
+
+
+
+const start = () =>  {
+  run();
+  setStatus(1)
+  setInterv(setInterval(run, 10))
+}
+
+const stop = () =>  {
+   clearInterval(interv)
+  setStatus(2);
+}
+
+const resume = () =>  {
+ start()
+}
+
+const reset = () =>  {
+  clearInterval(interv)
+  setStatus(0);
+  setTime(timeFormat)
+
+}
+
+var updateMs = time.ms, updateS = time.s, updateM = time.m, updateH = time.h, updateD = time.d;
+
+const run = () => {
+  if(updateH === 24) {
+    updateD++;
+    updateH=0;
+  }
+
+  if(updateM === 60){
+    updateH++;
+    updateM= 0;
+  }
+  if(updateS === 60) {
+    updateM++;
+    updateS=0;
+  }
+  if(updateMs === 100) {
+    updateS++;
+    updateMs=0;
+  }
+  updateMs++;
+
+  const array = {
+    ms:updateMs, s:updateS, m:updateM, h:updateH, d:updateD
+  }
+  return setTime(array);
+}
+
 
   // eliminar un producto
   const eliminar = (dish) => {
@@ -102,6 +170,7 @@ const [error, setError] = React.useState(null)
         
         cleanOrder()
         setError(null)
+        start()
         return docRef
 
     } catch(error){
@@ -185,7 +254,14 @@ const editOrder = async (id, status) => {
      deleteOrder,
      editOrder,
      stateOrder, 
-     error
+     error, 
+     time, 
+     setTime,
+     start,
+     status, 
+     stop, 
+     resume, 
+     reset
  }
 
 

@@ -31,6 +31,8 @@ const OrderReady = () => {
                "bg-green-300 max-w-sm rounded overflow-hidden shadow-lg mt-6 mr-4"
           }
         >
+         
+          
           <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2"> Pedido </div>
             <p className="text-gray-700 text-base"> Hora: {item.hour} </p>

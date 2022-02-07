@@ -59,7 +59,7 @@ const Detalle = () => {
             
             <button 
             className="h-18 px-5 m-2 text-pink-100 transition-colors duration-150 bg-gray-600 rounded-lg focus:shadow-outline hover:bg-gray-800 font-bold py-2 aling-center mt-3"
-            onClick={agregarFire}
+            onClick={agregarFire()}
            > Enviar pedido </button> 
             </div>
             </div>

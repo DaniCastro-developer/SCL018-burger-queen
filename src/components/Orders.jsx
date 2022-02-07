@@ -1,5 +1,6 @@
 import React from "react";
 import { UserContext } from "../context/UserProvider";
+import Chronometer from "./Chronometer";
 
 const Orders = () => {
   const { datos, editOrder } = React.useContext(UserContext);
@@ -34,6 +35,7 @@ const Orders = () => {
           }
         >
           <div className="px-6 py-4">
+          <Chronometer/>
             <div className="font-bold text-xl mb-2"> Pedido </div>
             <p className="text-gray-700 text-base"> Hora: {item.hour} </p>
             <p className="text-gray-700 text-base"> Cliente: {item.name} - Mesa: {item.table}  </p>
