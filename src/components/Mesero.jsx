@@ -15,7 +15,7 @@ const Mesero = () => {
   };
 
   return (
-    <section className="cotainer my-6 flex flex-col xl:justify-center">
+    <section className="ml-6 flex flex-col justify-center">
       <main className="grid md:grid-cols-5 xl:grid-cols-2 my-6">
         <div className="container md:col-span-3 xl:col-span-1 flex flex-row ">
           <div className="container flex flex-col">
@@ -24,7 +24,7 @@ const Mesero = () => {
             </div>
             <div>
               <button
-                className="h-10 w-40  m-2 md:h-10 md:w-25 md:text-base text-pink-100 transition-colors duration-150 bg-pink-500 rounded-lg focus:shadow-outline hover:bg-pink-600"
+                className="h-10 w-40  m-2 md:h-10 md:w-25 xl:w-30 md:text-base text-pink-100 transition-colors duration-150 bg-pink-500 rounded-lg focus:shadow-outline hover:bg-pink-600"
                 onClick={() => activarMenu(true)}
               >
                 mañana

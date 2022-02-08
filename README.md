@@ -13,11 +13,11 @@
 
 ## **Modelo responsive** 
 
-<img src=src/assets/readme-img/desktop.png width= 400px>
-<img src= src/assets/readme-img/tablet.png width= 400px> 
+<p aling= center><img src=src/assets/readme-img/desktop.png width= 400px></p>
+<p aling= center><img src= src/assets/readme-img/tablet.png width= 400px></p> 
 
 ## **Historias de usuario**
-<img src=src/assets/readme-img/HU1.png width= 400px>
+<p aling= center><img src=src/assets/readme-img/HU1.png width= 400px></p>
 
 ## **Test usabilidad**
 
@@ -25,6 +25,6 @@ En su versión de prueba les usuaries indicaron la falta de procesos de confirma
 
 ***
 
- ### Este proyecto se creó con React, Tailwind, CSS y Firebase.
- ### Autora: **Daniela Castro Salazar**
+ Este proyecto se creó con React, Tailwind, CSS y Firebase.
+ Autora: **Daniela Castro Salazar**
 
