@@ -4,9 +4,9 @@ import logopink  from '../assets/img/logopink.png'
 
 const Bienvenida = () => {
   return (
-     <main className=' mt-20'>
+     <main className='container mt-2'>
       <div className='flex justify-center'>
-      <img id= 'log' src={logopink} alt='logo silencio Bruno' className=' mt-12 ms:w-9/12 md:w-9/12 md:h-9/12'></img>
+      <img src={logopink} alt='logo silencio Bruno' className=' mt-12 ms:w-9/12 md:w-9/12 md:h-9/12 xl:w-2/6 xl:h-2/6'></img>
       </div>
       <div id= 'btn-enter' className='flex justify-center space-x-10'>
       <Link to = {`/login`} > <button 

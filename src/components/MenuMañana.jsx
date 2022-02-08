@@ -12,7 +12,7 @@ const MenuMañana = () => {
   }, []);
 
   return (
-    <main className="container col-span-3">
+    <main className="container md:col-span-3 xl:col-span-1">
       <h1 className="mt-7 text-bold"> Comida </h1>
       <div className="flex flex-wrap">
         {food

@@ -15,9 +15,9 @@ const Mesero = () => {
   };
 
   return (
-    <section className="cotainer flex-col">
-      <main className="grid grid-cols-5">
-        <div className="container col-span-3 flex flex-row ">
+    <section className="cotainer my-6 flex flex-col xl:justify-center">
+      <main className="grid md:grid-cols-5 xl:grid-cols-2 my-6">
+        <div className="container md:col-span-3 xl:col-span-1 flex flex-row ">
           <div className="container flex flex-col">
             <div>
               <h2 className="md:text-4xl mt-6"> Menú</h2>
@@ -40,7 +40,7 @@ const Mesero = () => {
         </div>
 
         {/*  datos cliente */}
-        <div className="flex flex-row items-center col-span-2 ">
+        <div className="flex flex-row items-center md:col-span-2 xl:col-span-1 ">
           <div className="flex flex-col">
             <div>
               <h2 className="mt-6 md:text-4xl "> Datos cliente</h2>
@@ -76,7 +76,7 @@ const Mesero = () => {
       </main>
 
       {/* Menú y detalle pedido */}
-      <main className="grid grid-cols-5 ml-4">
+      <main className="grid md:grid-cols-5 xl:grid-cols-2 ml-4">
         {changeMenu ? <MenuMañana /> : <MenuTarde />}
 
         <Detalle />

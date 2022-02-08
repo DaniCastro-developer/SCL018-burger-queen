@@ -20,7 +20,7 @@ const Detalle = () => {
     <aside className=" flex flex-col  mt-6 mr-4">
       <h2 className="md:text-4xl mt-2"> Detalle compra </h2>
       <div className="bg-pink-500 mt-3 px-4 py-5 md:w-72 rounded-lg">
-        <div className="grid grid-cols-2">
+        <div className="grid md:grid-cols-2 xl:col-span-1">
         <div id="detalle" className="justify-self-start">
           <p className="mt-2"> Cliente: {cliente.name} </p>
           <p> Mesa: {cliente.table} </p>
