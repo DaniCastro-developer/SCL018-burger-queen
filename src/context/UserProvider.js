@@ -1,26 +1,28 @@
 import React from 'react';
-import {
+import {db} from "../firebase"
+//import firebase from "firebase/compat/app"
+//import { getFirestore } from "firebase/firestore";
+//import firebase from 'firebase/compat/app';7import "firebase/compat/firestore"
+/*import {
     addDoc,
     collection,
     deleteDoc,
     doc,
     updateDoc, 
     onSnapshot
-  } from "firebase/firestore";
-  import { db } from "../firebase.js";
+  } from "firebase/compat/firestore"*/
+
+  //import { db } from "../firebase.js";
  // import { nanoid } from 'nanoid'
 
 export const UserContext = React.createContext()
 
 const UserProvider = (props) => {
-
     // objeto con nombre cliente y mesa
     const users = {
         name: '',
         table: ''
     }
-
-
 
 const [cliente, setCliente] = React.useState(users)
 const [pedido, setPedido] = React.useState([])
@@ -28,7 +30,7 @@ const [datos, setDatos] = React.useState([]);
 const [stateOrder, setStateOrder] = React.useState(false)
 const [error, setError] = React.useState(null)
 const [modalActive, setModalActive] = React.useState(false)
-const [confirm, setConfirm] = React.useState(false)
+//const [confirm, setConfirm] = React.useState(false)
 
 // chrono
 // crear estado inicial (objeto que se quede en un array[time])
@@ -221,9 +223,9 @@ const run = () => {
 
   // borrar una comanda
 
-  const deleteOrder = async (id, status) => {
-    OpenModal()
+  const deleteOrder = async (id) => {
     try {
+      const confirm = window.confirm('¿Quieres eliminar este pedido?');
       if (confirm) {
         await deleteDoc(doc(db, 'comanda', id));
       }
@@ -272,7 +274,6 @@ const editOrder = async (id, status) => {
      resume, 
      reset,
      resetOrder,
-     setConfirm,
      modalActive,
      setModalActive,
      OpenModal

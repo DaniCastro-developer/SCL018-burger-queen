@@ -21,14 +21,14 @@ function App() {
     <Router>
       <Switch>
         <Route path="/" exact>
-            <Bienvenida />
+            <Bienvenida/>
         </Route>
       </Switch>
 
       <Switch>
         <Route path="/login">
           <div>
-            <Login />
+            <Login/>
           </div>
         </Route>
       </Switch>
@@ -42,7 +42,7 @@ function App() {
       <Switch>
         <Route path="/role">
           <div>
-            <Roles />
+            <Roles/>
           </div>
         </Route>
       </Switch>
@@ -51,8 +51,8 @@ function App() {
        
         <Route path="/mesero">
         <UserProvider>
-          <NavBar />
-          <Mesero />
+          <NavBar/>
+          <Mesero/>
           </UserProvider>
         </Route>
         
@@ -61,7 +61,7 @@ function App() {
       <Switch>
         <Route path="/kitchen">
           <UserProvider>
-          <NavBar />
+          <NavBar/>
           <Kitchen/>
           </UserProvider>
         </Route>
@@ -70,7 +70,7 @@ function App() {
       <Switch>
         <Route path="/ready">
           <UserProvider>
-          <NavBar />
+          <NavBar/>
           <OrderReady/>
           </UserProvider>
         </Route>

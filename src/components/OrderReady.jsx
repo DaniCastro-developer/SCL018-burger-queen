@@ -4,9 +4,13 @@ import { UserContext } from "../context/UserProvider";
 // confirm de entregar pedido!!
 
 const OrderReady = () => {
-  const { datos, deleteOrder } = React.useContext(UserContext);
+  const { datos, deleteOrder, editOrder } = React.useContext(UserContext);
 
-  const filteredRequest = datos.filter((item) => item.status === "listo");
+  //const filteredRequest = datos.filter((item) => item.status === "listo");
+
+  const array1 = datos.filter(item => item.status === 'listo')
+  const array2 =  datos.filter(item => item.status === 'Entregado')
+  const filteredRequest = array1.concat(array2);
 
   let orderedOrders = filteredRequest.sort((a, b) => {
     if (a.hour < b.hour) {
@@ -28,10 +32,13 @@ const OrderReady = () => {
         <div
           key={id}
           className={
-               "bg-green-300 max-w-sm rounded overflow-hidden shadow-lg mt-6 mr-4"
-          }
+              item.status === "Entregado"
+                ? "bg-gray-200 max-w-sm rounded overflow-hidden shadow-lg mt-6 mr-4"
+                : "bg-green-300 max-w-sm rounded overflow-hidden shadow-lg mt-6 mr-4"
+            }
         >
          
+         <div className="flex justify-end p-2">
           
           <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2"> Pedido </div>
@@ -44,6 +51,22 @@ const OrderReady = () => {
               {" "}
               Estado: {item.status}{" "}
             </p>
+          </div>
+
+          <svg
+            className="w-5 h-5 m-2"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+           onClick={() => deleteOrder(item.id)}
+
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
           </div>
 
           {[item.order].map((ele, e) => (
@@ -62,9 +85,11 @@ const OrderReady = () => {
           <div className="px-6 pt-4 pb-2">
             <button
               className="bg-red-500 text-gray-200 rounded hover:bg-red-400 px-6 py-2 focus:outline-none mx-1 my-1 btn-sm text-xs"
-              onClick={() => deleteOrder(item.id, "listo")}
+              onClick={() => editOrder(item.id, 'Entregado')}
             >
-             Entregar pedido
+             {item.status === "Entregado"
+                ? "--"
+                : "Entregar pedido" }
             </button>
 
            
