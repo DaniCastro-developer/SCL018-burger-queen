@@ -20,7 +20,7 @@ const OrderReady = () => {
   });
 
   return (
-    <div className="container mt-4">
+    <main className="container mt-4">
       <h2 className="text-center"> Pedidos por entregar </h2>
       <div className="flex flex-wrap">
   
@@ -72,7 +72,7 @@ const OrderReady = () => {
         </div>
       ))}
       </div>
-    </div>
+    </main>
   );
 };
 

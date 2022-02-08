@@ -12,7 +12,7 @@ const MenuMañana = () => {
   }, []);
 
   return (
-    <div className="container">
+    <main className="container">
       <h1 className="mt-7"> Comida </h1>
       <div className="flex flex-wrap">
         {food
@@ -31,7 +31,7 @@ const MenuMañana = () => {
                     src={item.image}
                     alt={item.name}
                   />
-                  <div className="px-4 py-2" id={item.id}>
+                  <div className="px-4" id={item.id}>
                     <h1 className="mb-1 text-center text-base font-semibold tracking-tight text-gray-800">
                       {item.name}{" "}
                       <p className="leading-normal text-gray-700 text-base">
@@ -64,7 +64,7 @@ const MenuMañana = () => {
                     src={item.image}
                     alt={item.name}
                   />
-                  <div className="px-4 py-2" id={item.id}>
+                  <div className="px-4" id={item.id}>
                     <h1 className="mb-1 text-center text-base font-semibold tracking-tight text-gray-800">
                       {item.name}{" "}
                       <p className="leading-normal text-gray-700 text-base">
@@ -78,7 +78,7 @@ const MenuMañana = () => {
             </div>
           ))}
       </div>
-    </div>
+    </main>
   );
 };
 

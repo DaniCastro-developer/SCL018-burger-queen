@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Pacifico&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,10 +6,11 @@
 
 body {
   margin: 10px;
-  background: pink;
+  background: #FFB7C2; 
   margin-left: 30px;
   margin-right: 30px;
   font-family: 'arimo', sans-serif;
+  font-display: 'arimo', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -22,6 +23,18 @@ code {
 p {
   font-family: 'Montserrat', sans-serif;
   color: white;
+}
+
+label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+input {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem; 
 }
 
 h2 {
@@ -52,11 +65,14 @@ img {
   width: 30%;
 }
 
+#logo {
+  width: 50%;
+}
+
 button {
   font-family: 'Montserrat', sans-serif;
   margin: 1.5 rem 0 rem 1.5 rem 0 rem;
-
-  
+  font-size: 1.25rem;
 }
 
 .NavBar {

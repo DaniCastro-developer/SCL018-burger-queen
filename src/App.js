@@ -21,9 +21,7 @@ function App() {
     <Router>
       <Switch>
         <Route path="/" exact>
-          <div className="flex flex-col">
             <Bienvenida />
-          </div>
         </Route>
       </Switch>
 

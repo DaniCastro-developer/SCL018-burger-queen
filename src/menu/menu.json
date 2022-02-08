@@ -42,18 +42,50 @@
         "image":"https://s.yimg.com/ny/api/res/1.2/_mMkG8Yy1Mwo7_rurkXeBQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM2NQ--/https://s.yimg.com/uu/api/res/1.2/mESdSLYxYlcS6h4X7swdkw--~B/aD01MDI7dz04ODA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/es/iprofesional_650/856774cd16c420583af43064550b6466"
     },
     {
-        "id": 6,
-        "name": "Helado simple",
+        "id": 6.1,
+        "name": "Helado Frutilla",
         "price": 10,
-        "category": "comida",
+        "category": "Helado simple",
         "time": "tarde",
         "image":"https://topjoyec.com/wp-content/uploads/2020/09/artesanalsimple.jpg"
     },
     {
-        "id": 7,
-        "name": "Helado doble",
+        "id": 6.2,
+        "name": "Helado Vainilla",
+        "price": 10,
+        "category": "Helado simple",
+        "time": "tarde",
+        "image":"https://topjoyec.com/wp-content/uploads/2020/09/artesanalsimple.jpg"
+    },
+    {
+        "id": 6.3,
+        "name": "Helado Chocolate",
+        "price": 10,
+        "category": "Helado simple",
+        "time": "tarde",
+        "image":"https://topjoyec.com/wp-content/uploads/2020/09/artesanalsimple.jpg"
+    },
+    {
+        "id": 7.1,
+        "name": "Helado Choco-Frutilla",
         "price": 15,
-        "category": "comida",
+        "category": "Helado doble",
+        "time": "tarde",
+        "image":"https://topjoyec.com/wp-content/uploads/2020/09/artesanaldoble.jpg"
+    },
+    {
+        "id": 7.2,
+        "name": "Helado Fruti-Vainilla",
+        "price": 15,
+        "category": "Helado doble",
+        "time": "tarde",
+        "image":"https://topjoyec.com/wp-content/uploads/2020/09/artesanaldoble.jpg"
+    },
+    {
+        "id": 7.3,
+        "name": "Helado Choco-Vainilla",
+        "price": 15,
+        "category": "Helado doble",
         "time": "tarde",
         "image":"https://topjoyec.com/wp-content/uploads/2020/09/artesanaldoble.jpg"
     },

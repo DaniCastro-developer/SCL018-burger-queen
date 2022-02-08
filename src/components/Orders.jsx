@@ -22,9 +22,9 @@ const Orders = () => {
 
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4 ">
       <h2 className="text-center"> Pedidos Pendientes </h2>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap justify-center">
       {orderedOrders.map((item, id) => (
         <div
           key={id}

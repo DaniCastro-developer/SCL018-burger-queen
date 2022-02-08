@@ -1,16 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo  from '../assets/img/logo.png'
+import logopink  from '../assets/img/logopink.png'
 
 const Bienvenida = () => {
-  return <div className='flex flex-col  items-center content-center'>
+  return (
+     <main className=' flex flex-col items-center content-center'>
       <div>
-      <img src={logo} alt='logo silencio Bruno' className='mx-auto content-center'></img>
+      <img id= 'log' src={logopink} alt='logo silencio Bruno' className='mx-auto mt-12'></img>
       </div>
-      <div>
-      <Link to = {`/login`} > <button className="h-18 px-5 m-2 text-pink-100 transition-colors duration-150 bg-pink-600 rounded-lg focus:shadow-outline hover:bg-pink-800 font-bold py-2 "> Iniciar sesión </button></Link>
+      <div id= 'btn-enter'>
+      <Link to = {`/login`} > <button 
+      className="h-18 py-5 px-9 text-pink-100 transition-colors duration-150 bg-pink-500 rounded-lg focus:shadow-outline hover:bg-pink-800 text-lg font-bold"> Iniciar sesión </button></Link>
       </div>
-  </div>;
+  </main>
+  )
 };
 
 export default Bienvenida;

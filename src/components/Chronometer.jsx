@@ -9,11 +9,10 @@ const Chronometer = () => {
     <section className="timer-container">
       <section className="timer">
         <div>
-          <span className="mdi mdi-calendar-clock timer-icon"></span>
-          <h1> CountDown Timer </h1>
+          <h1 className="text-center"> Tiempo del pedido </h1>
         </div>
-        <div className="flex flex-row text-center m-5">
-          <section>
+        <div className="flex flex-row text-center m-3">
+          <section >
             <p className="text-black"> {(time.d >= 10) ? time.d : '0' + time.d} </p>
             <p>
               <small className="text-black"> Days </small>{" "}

@@ -14,29 +14,51 @@ const Mesero = () => {
     setChangeMenu(modo);
   };
 
-
   return (
-    <div className="cotainer">
-      <div>
-        <h2 className="mt-5"> Datos cliente</h2>
-        <div className="flex flex-row">
-          <div className=" m-2 flex">
+    <section className="cotainer flex-col">
+      <main className="grid grid-cols-2">
+        <div className="container flex flex-row ">
+          <div className="container flex flex-col">
             <div>
-              <p> Nombre comensal </p>
+              <h2> Menú</h2>
+            </div>
+            <div>
+              <button
+                className="h-10 w-40  m-2 text-pink-100 transition-colors duration-150 bg-pink-500 rounded-lg focus:shadow-outline hover:bg-pink-600"
+                onClick={() => activarMenu(true)}
+              >
+                mañana
+              </button>
+              <button
+                className="h-10 w-40 m-2 text-pink-100 transition-colors duration-150 bg-pink-500 rounded-lg focus:shadow-outline hover:bg-pink-600"
+                onClick={() => activarMenu(false)}
+              >
+                Tarde
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/*  datos cliente */}
+        <div className="flex flex-row items-center ">
+          <div className="flex flex-col">
+            <div>
+              <h2 className="mt-5"> Datos cliente</h2>
+            </div>
+            <div className="flex flex-row">
+             
               <input
                 type="text"
                 name="name"
-                className=" form-control m-3 p-2 rounded text-gray-500"
+                className="border-1 form-control m-3 p-2 border-pink-500 rounded text-gray-500"
                 placeholder="Nombre cliente"
                 value={cliente.name}
                 onChange={(e) =>
                   setCliente({ ...cliente, name: e.target.value })
                 }
               />
-              </div>
 
-                <div>
-              <p> Mesa </p>
+         
               <input
                 type="number"
                 className="form-control m-3 p-2 rounded text-gray-500"
@@ -46,37 +68,20 @@ const Mesero = () => {
                   setCliente({ ...cliente, table: e.target.value })
                 }
               />
-              </div>
-          </div>
-        </div>
-
-        <div className="container flex flex-row">
-          <div>
-            <h2 className="mt-6"> Menú</h2>
-            <button
-              className="h-10 w-40 px-5 m-2 text-pink-100 transition-colors duration-150 bg-pink-500 rounded-lg focus:shadow-outline hover:bg-pink-600"
-              onClick={() => activarMenu(true)}
-            >
-              mañana
-            </button>
-            <button
-              className="h-10 w-40 px-5 m-2 text-pink-100 transition-colors duration-150 bg-pink-500 rounded-lg focus:shadow-outline hover:bg-pink-600"
-              onClick={() => activarMenu(false)}
-            >
-              Tarde
-            </button>
-
-            <div className="">
-              {changeMenu ? <MenuMañana /> : <MenuTarde />}
             </div>
           </div>
-
-          <div>
-            <Detalle />
-          </div>
         </div>
-      </div>
-    </div>
+
+        {/* Seleccionar menú mañana/tarde  */}
+      </main>
+
+      {/* Menú y detalle pedido */}
+      <main className="grid grid-cols-2 ml-4">
+        {changeMenu ? <MenuMañana /> : <MenuTarde />}
+
+        <Detalle />
+      </main>
+    </section>
   );
 };
 

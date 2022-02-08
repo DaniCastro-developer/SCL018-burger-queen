@@ -27,6 +27,8 @@ const [pedido, setPedido] = React.useState([])
 const [datos, setDatos] = React.useState([]);
 const [stateOrder, setStateOrder] = React.useState(false)
 const [error, setError] = React.useState(null)
+const [modalActive, setModalActive] = React.useState(false)
+const [confirm, setConfirm] = React.useState(false)
 
 // chrono
 // crear estado inicial (objeto que se quede en un array[time])
@@ -95,6 +97,30 @@ const run = () => {
 }
 
 
+// ------------- Modal ---------------
+
+ /* const overlay = document.querySelector('#overlay')
+  
+  const changeModal = () => {
+    overlay.classList.toggle('hidden')
+    overlay.classList.toggle('flex')
+  }; */
+
+
+  const OpenModal = () => {
+    if(modalActive === false){
+    setModalActive(true)}
+    else {
+      setModalActive(false)
+    }
+  }
+
+  // Borrar pedido (cliente se arrepiente)
+
+  const resetOrder = () => {
+    cleanOrder()
+  }
+
   // eliminar un producto
   const eliminar = (dish) => {
     const newPedido = pedido.filter((item) => item.id !== dish);
@@ -136,7 +162,7 @@ const run = () => {
  }
 
 
- // FireStore
+ //----------------------- FireStore ------------------
 
  const cleanOrder = () => {
     setPedido([])
@@ -167,10 +193,11 @@ const run = () => {
             status: "Pendiente"
             
         })
-        
+    
         cleanOrder()
         setError(null)
         start()
+        setModalActive(false)
         return docRef
 
     } catch(error){
@@ -179,24 +206,6 @@ const run = () => {
   };
 
   React.useEffect(() => {
-  /*   const readData = async () => {
-        try {
-            const q = await query(collection(db, 'comanda'));
-               await  onSnapshot(q, (querySnapshot) => {
-                    const order = [];
-                    querySnapshot.forEach((doc) => {
-                    order.push({ ...doc.data(), id: doc.id });
-                    console.log(order)
-                    setDatos(order)
-                    
-            });
-        })
-        } catch (error) {
-            console.log(error)
-        }
-
-    }
-    readData() */
     onSnapshot(
       collection(db, "comanda"),
       (snapshot) => {
@@ -213,8 +222,8 @@ const run = () => {
   // borrar una comanda
 
   const deleteOrder = async (id, status) => {
+    OpenModal()
     try {
-      const confirm = window.confirm('¿Quieres eliminar este pedido?');
       if (confirm) {
         await deleteDoc(doc(db, 'comanda', id));
       }
@@ -261,7 +270,12 @@ const editOrder = async (id, status) => {
      status, 
      stop, 
      resume, 
-     reset
+     reset,
+     resetOrder,
+     setConfirm,
+     modalActive,
+     setModalActive,
+     OpenModal
  }
 
 

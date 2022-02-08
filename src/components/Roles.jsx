@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import kitchen from '../assets/img/chef.jpeg'
 import waitress from '../assets/img/waitress.jpeg'
+import Navbar from './NavBar'
 
 const Roles = () => {
-  return <div className='container'>
-      <h2 className='text-center text-4xl'> Selecciona tu perfil de hoy </h2>
+  return <div className='container mt-4'>
+      <Navbar/>
+      <h2 className='text-center text-4xl mt-12'> Selecciona tu perfil de hoy </h2>
       <div className='flex justify-center'>
      <Link to={`/mesero`}> <div className="mx-6 bg-pink-100 my-3 max-w-xs overflow-hidden rounded-lg shadow-lg focus:shadow-outline"> 
                         <img className="object-cover w-full h-48" src={waitress} alt= "mesera" />
