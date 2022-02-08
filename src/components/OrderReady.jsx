@@ -24,28 +24,28 @@ const OrderReady = () => {
   });
 
   return (
-    <main className="container mt-4">
+    <section className="container mt-4">
       <h2 className="text-center"> Pedidos por entregar </h2>
-      <div className="flex flex-wrap">
+      <main className="flex flex-wrap">
   
       {orderedOrders.map((item, id) => (
         <div
           key={id}
           className={
               item.status === "Entregado"
-                ? "bg-gray-200 max-w-sm rounded overflow-hidden shadow-lg mt-6 mr-4"
-                : "bg-green-300 max-w-sm rounded overflow-hidden shadow-lg mt-6 mr-4"
+                ? "bg-gray-200 max-w-xs rounded overflow-hidden shadow-lg mt-6 mr-4"
+                : "bg-green-300 max-w-xs rounded overflow-hidden shadow-lg mt-6 mr-4"
             }
         >
          
-         <div className="flex justify-end p-2">
+         <div className="grid grid-flow-col">
           
-          <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2"> Pedido </div>
+          <div className="px-6 py-4 justify-self-start ">
+            <div className="font-bold text-xl mb-2"> Pedido {item.name} </div>
             <p className="text-gray-700 text-base"> Hora: {item.hour} </p>
             <p className="text-gray-700 text-base">
               {" "}
-              Cliente: {item.name} - Mesa: {item.table}{" "}
+              Mesa: {item.table}{" "}
             </p>
             <p className="text-gray-700 text-base font-bold">
               {" "}
@@ -53,8 +53,9 @@ const OrderReady = () => {
             </p>
           </div>
 
+<div className="justify-self-end ">
           <svg
-            className="w-5 h-5 m-2"
+            className="w-5 h-5 m-2 "
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -67,6 +68,7 @@ const OrderReady = () => {
               clip-rule="evenodd"
             ></path>
           </svg>
+          </div>
           </div>
 
           {[item.order].map((ele, e) => (
@@ -96,8 +98,8 @@ const OrderReady = () => {
           </div>
         </div>
       ))}
-      </div>
-    </main>
+      </main>
+    </section>
   );
 };
 

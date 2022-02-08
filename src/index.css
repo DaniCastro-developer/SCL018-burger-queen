@@ -22,17 +22,20 @@ code {
 
 p {
   font-family: 'Montserrat', sans-serif;
+  font-display: 'arimo', sans-serif;
   color: white;
 }
 
 label {
   font-family: 'Montserrat', sans-serif;
+  font-display: 'arimo', sans-serif;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
 input {
   font-family: 'Montserrat', sans-serif;
+  font-display: 'arimo', sans-serif;
   font-size: 0.875rem;
   line-height: 1.25rem; 
 }
@@ -40,6 +43,7 @@ input {
 h2 {
   color: #FFFFFF;
   font-family: 'Pacifico', cursive;
+  font-display: 'arimo', sans-serif;
   font-size: 2.5rem;
   line-height: 1;  
   margin: 1rem;
@@ -48,6 +52,7 @@ h2 {
 h3 {
   color: #FFFFFF;
   font-family: 'Montserrat', sans-serif;
+  font-display: 'arimo', sans-serif;
   font-size: 1rem;
   line-height: 1;  
   margin: 1rem;
@@ -58,23 +63,19 @@ h1 {
   font-size: 1.5rem;
   line-height: 2rem;
   margin-top: 1.5rem;
+  font-display: 'arimo', sans-serif;
   
 }
 
-img {
-  width: 30%;
-}
-
-#logo {
-  width: 50%;
-}
 
 button {
   font-family: 'Montserrat', sans-serif;
+  font-display: 'arimo', sans-serif;
   margin: 1.5 rem 0 rem 1.5 rem 0 rem;
-  font-size: 1.25rem;
+ 
 }
 
 .NavBar {
   background-color: black;
+  font-display: 'arimo', sans-serif;
 }

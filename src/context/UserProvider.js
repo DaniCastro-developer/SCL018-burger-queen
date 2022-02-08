@@ -1,18 +1,14 @@
 import React from 'react';
-import {db} from "../firebase"
-//import firebase from "firebase/compat/app"
-//import { getFirestore } from "firebase/firestore";
-//import firebase from 'firebase/compat/app';7import "firebase/compat/firestore"
-/*import {
+import {
     addDoc,
     collection,
     deleteDoc,
     doc,
     updateDoc, 
     onSnapshot
-  } from "firebase/compat/firestore"*/
+  } from "firebase/firestore"
 
-  //import { db } from "../firebase.js";
+  import { db } from "../firebase.js";
  // import { nanoid } from 'nanoid'
 
 export const UserContext = React.createContext()
@@ -188,6 +184,7 @@ const run = () => {
     try {
         const docRef = await addDoc(collection(db, 'comanda'),{
             hour: time,
+            date: date,
             table: cliente.table,
             name: cliente.name,
             order: pedido,
@@ -205,9 +202,11 @@ const run = () => {
     } catch(error){
         console.log(error)
     }
-  };
+  }; 
 
-  React.useEffect(() => {
+ 
+
+React.useEffect(() => {
     onSnapshot(
       collection(db, "comanda"),
       (snapshot) => {
@@ -232,7 +231,7 @@ const run = () => {
     } catch (error) {
         console.log(error)
     }
-}
+} 
 
 // editar un documento
 
@@ -247,7 +246,7 @@ const editOrder = async (id, status) => {
   } catch (error) {
     console.log(error)
   }
-}
+} 
 
 
  const totalProps = {

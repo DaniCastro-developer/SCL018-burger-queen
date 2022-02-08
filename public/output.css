@@ -473,8 +473,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 640px){
+  
   .container{
     max-width: 640px;
+
   }
 }
 

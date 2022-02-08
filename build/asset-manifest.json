@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2f4fd89a.css",
+    "main.js": "/static/js/main.c2aa1ddb.js",
+    "static/media/waitress.jpeg": "/static/media/waitress.2a7c5cb8542310849ee4.jpeg",
+    "static/media/chef.jpeg": "/static/media/chef.6e9cd50fe8c51fd23984.jpeg",
+    "static/media/logopink.png": "/static/media/logopink.e2483228e3978515f193.png",
+    "static/media/logo.png": "/static/media/logo.c0da3d9ca82d5b21cca1.png",
+    "index.html": "/index.html",
+    "main.2f4fd89a.css.map": "/static/css/main.2f4fd89a.css.map",
+    "main.c2aa1ddb.js.map": "/static/js/main.c2aa1ddb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2f4fd89a.css",
+    "static/js/main.c2aa1ddb.js"
+  ]
+}

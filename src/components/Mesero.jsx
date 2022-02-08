@@ -16,21 +16,21 @@ const Mesero = () => {
 
   return (
     <section className="cotainer flex-col">
-      <main className="grid grid-cols-2">
-        <div className="container flex flex-row ">
+      <main className="grid grid-cols-5">
+        <div className="container col-span-3 flex flex-row ">
           <div className="container flex flex-col">
             <div>
-              <h2> Menú</h2>
+              <h2 className="md:text-4xl mt-6"> Menú</h2>
             </div>
             <div>
               <button
-                className="h-10 w-40  m-2 text-pink-100 transition-colors duration-150 bg-pink-500 rounded-lg focus:shadow-outline hover:bg-pink-600"
+                className="h-10 w-40  m-2 md:h-10 md:w-25 md:text-base text-pink-100 transition-colors duration-150 bg-pink-500 rounded-lg focus:shadow-outline hover:bg-pink-600"
                 onClick={() => activarMenu(true)}
               >
                 mañana
               </button>
               <button
-                className="h-10 w-40 m-2 text-pink-100 transition-colors duration-150 bg-pink-500 rounded-lg focus:shadow-outline hover:bg-pink-600"
+                className="h-10 w-40 m-2 md:h-10 md:w-25 md:text-base text-pink-100 transition-colors duration-150 bg-pink-500 rounded-lg focus:shadow-outline hover:bg-pink-600"
                 onClick={() => activarMenu(false)}
               >
                 Tarde
@@ -40,17 +40,17 @@ const Mesero = () => {
         </div>
 
         {/*  datos cliente */}
-        <div className="flex flex-row items-center ">
+        <div className="flex flex-row items-center col-span-2 ">
           <div className="flex flex-col">
             <div>
-              <h2 className="mt-5"> Datos cliente</h2>
+              <h2 className="mt-6 md:text-4xl "> Datos cliente</h2>
             </div>
-            <div className="flex flex-row">
+            <div className="flex flex-row ">
              
               <input
                 type="text"
                 name="name"
-                className="border-1 form-control m-3 p-2 border-pink-500 rounded text-gray-500"
+                className="border-1 form-control m-3 p-2 md:h-10 md:w-28 sm:w-15 md:text-sm border-pink-500 rounded text-gray-500"
                 placeholder="Nombre cliente"
                 value={cliente.name}
                 onChange={(e) =>
@@ -61,8 +61,8 @@ const Mesero = () => {
          
               <input
                 type="number"
-                className="form-control m-3 p-2 rounded text-gray-500"
-                placeholder="Número de mesa"
+                className="form-control m-3 p-2 md:h-10 md:w-20 md:text-sm rounded text-gray-500"
+                placeholder="Nº de mesa md:text-sm"
                 value={cliente.table}
                 onChange={(e) =>
                   setCliente({ ...cliente, table: e.target.value })
@@ -76,7 +76,7 @@ const Mesero = () => {
       </main>
 
       {/* Menú y detalle pedido */}
-      <main className="grid grid-cols-2 ml-4">
+      <main className="grid grid-cols-5 ml-4">
         {changeMenu ? <MenuMañana /> : <MenuTarde />}
 
         <Detalle />

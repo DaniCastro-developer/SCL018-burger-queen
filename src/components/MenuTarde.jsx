@@ -20,7 +20,7 @@ const MenuTarde = () => {
  
 
   return (
-    <main className="container">
+    <main className="container col-span-3">
       <h1 className="mt-7"> Helado simple </h1>
       <div className="flex flex-wrap">
         {food

@@ -30,15 +30,15 @@ const Orders = () => {
           key={id}
           className= {
             item.status === "Pendiente"
-              ? "bg-pink-300  max-w-sm rounded overflow-hidden shadow-lg mt-4 mr-4"
-              : "bg-yellow-200  max-w-sm rounded overflow-hidden shadow-lg mt-4 mr-4"
+              ? "bg-pink-300  max-w-xs rounded overflow-hidden shadow-lg mt-4 mr-4"
+              : "bg-yellow-200  max-w-xs rounded overflow-hidden shadow-lg mt-4 mr-4"
           }
         >
           <div className="px-6 py-4">
           <Chronometer/>
-            <div className="font-bold text-xl mb-2"> Pedido </div>
+            <div className="font-bold text-xl mb-2"> Pedido de {item.name} </div>
             <p className="text-gray-700 text-base"> Hora: {item.hour} </p>
-            <p className="text-gray-700 text-base"> Cliente: {item.name} - Mesa: {item.table}  </p>
+            <p className="text-gray-700 text-base"> Mesa: {item.table}  </p>
             <p className="text-gray-700 text-base font-bold"> Estado: {item.status} </p>
           </div>
 

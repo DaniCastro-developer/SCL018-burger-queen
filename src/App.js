@@ -27,9 +27,7 @@ function App() {
 
       <Switch>
         <Route path="/login">
-          <div>
             <Login/>
-          </div>
         </Route>
       </Switch>
 
@@ -41,9 +39,7 @@ function App() {
 
       <Switch>
         <Route path="/role">
-          <div>
             <Roles/>
-          </div>
         </Route>
       </Switch>
       

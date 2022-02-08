@@ -12,8 +12,8 @@ const MenuMañana = () => {
   }, []);
 
   return (
-    <main className="container">
-      <h1 className="mt-7"> Comida </h1>
+    <main className="container col-span-3">
+      <h1 className="mt-7 text-bold"> Comida </h1>
       <div className="flex flex-wrap">
         {food
           .filter((menu) => menu.time === "mañana")
@@ -25,7 +25,7 @@ const MenuMañana = () => {
                   agregarPedido(item);
                 }}
               >
-                <div className="bg-pink-100 my-3 w-40 h-35 overflow-hidden rounded-lg shadow-lg">
+                <div className="bg-pink-100 my-3 w-40 h-35 md:w-13 md:h-15 overflow-hidden rounded-lg shadow-lg">
                   <img
                     className="object-cover w-40 h-20"
                     src={item.image}
