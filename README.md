@@ -13,15 +13,15 @@
 
 ## **Modelo responsive** 
 
-<img src=src/assets/readme-img/desktop.png>
-<img src= src/assets/readme-img/tablet.png>
+<img src=src/assets/readme-img/desktop.png width= 400px>
+<img src= src/assets/readme-img/tablet.png width= 400px> 
 
 ## **Historias de usuario**
-<img src=src/assets/readme-img/HU1.png>
+<img src=src/assets/readme-img/HU1.png width= 400px>
 
 ## **Test usabilidad**
 
-    En su versión de prueba les usuaries indicaron la falta de procesos de confirmación, como medio para prevenir el error, a partir de esto se intregraron modales para confirmar los pasos más importantes como enviar pedido a cocina, entregar o eliminar pedido. Además, para facilitar el uso de manera visual, los pedidos cambian de color según el estado en el que se encuentre.
+En su versión de prueba les usuaries indicaron la falta de procesos de confirmación, como medio para prevenir el error, a partir de esto se intregraron modales para confirmar los pasos más importantes como enviar pedido a cocina, entregar o eliminar pedido. Además, para facilitar el uso de manera visual, los pedidos cambian de color según el estado en el que se encuentre.
 
 ***
 
