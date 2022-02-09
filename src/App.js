@@ -1,78 +1,27 @@
 // import './App.css';
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
-import Bienvenida from "./components/Bienvenida";
-import Mesero from "./components/Mesero";
-import NavBar from "./components/NavBar";
-import Login from "./components/Login";
-import Registro from "./components/Registro";
-import Roles from "./components/Roles";
-import UserProvider from "./context/UserProvider";
-import Kitchen from "./components/Kitchen";
-import OrderReady from "./components/OrderReady";
-
+import { Routes, Route } from "react-router-dom";
+import Home from "./views/Home";
+import Waitress from "./views/Waitress";
+import Login from "./views/Login";
+import Register from "./views/Register";
+import Roles from "./views/Roles";
+import Kitchen from "./views/Kitchen";
+import Deliveries from "./views/Deliveries";
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact>
-            <Bienvenida/>
-        </Route>
-      </Switch>
-
-      <Switch>
-        <Route path="/login">
-            <Login/>
-        </Route>
-      </Switch>
-
-      <Switch>
-        <Route path="/register">
-          <Registro />
-        </Route>
-      </Switch>
-
-      <Switch>
-        <Route path="/role">
-            <Roles/>
-        </Route>
-      </Switch>
-      
-      <Switch>
-       
-        <Route path="/mesero">
-        <UserProvider>
-          <NavBar/>
-          <Mesero/>
-          </UserProvider>
-        </Route>
-        
-      </Switch>
-
-      <Switch>
-        <Route path="/kitchen">
-          <UserProvider>
-          <NavBar/>
-          <Kitchen/>
-          </UserProvider>
-        </Route>
-      </Switch>
-
-      <Switch>
-        <Route path="/ready">
-          <UserProvider>
-          <NavBar/>
-          <OrderReady/>
-          </UserProvider>
-        </Route>
-      </Switch>
-
-    </Router>
+  
+      <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/register" element={<Register/>} />
+          <Route path="/role" element={<Roles/>} />
+          <Route path="/waitress" element={<Waitress/>} />
+          <Route path="/kitchen" element={<Kitchen/>} />
+          <Route path="/ready" element={<Deliveries/>} />
+      </Routes>
+  
   );
 }
 

@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
-import menu from "../menu/menu.json";
-import { UserContext } from "../context/UserProvider";
+import React from 'react';
+import menu from "./menu/menu.json";
+import { UserContext } from "./context/UserProvider";
 
 const data = menu.products;
 const {
