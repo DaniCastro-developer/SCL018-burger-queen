@@ -8,7 +8,7 @@ const OrderReady = () => {
 
   //const filteredRequest = datos.filter((item) => item.status === "listo");
 
-  const array1 = datos.filter(item => item.status === 'listo')
+  const array1 = datos.filter(item => item.status === 'Listo')
   const array2 =  datos.filter(item => item.status === 'Entregado')
   const filteredRequest = array1.concat(array2);
 

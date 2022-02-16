@@ -1,6 +1,8 @@
 import React from "react";
 import { UserContext } from "../../context/UserProvider";
-import Chronometer from "../ Buttons/Chronometer";
+// import Chronometer from "../ Buttons/Chronometer";
+import ModalOrderReady from "../Alerts/ModalOrderReady";
+
 
 const Orders = () => {
   const { datos, editOrder } = React.useContext(UserContext);
@@ -35,7 +37,7 @@ const Orders = () => {
           }
         >
           <div className="px-6 py-4">
-          <Chronometer/>
+         {/*  <Chronometer/> */}
             <div className="font-bold text-xl mb-2"> Pedido de {item.name} </div>
             <p className="text-gray-700 text-base"> Hora: {item.hour} </p>
             <p className="text-gray-700 text-base"> Mesa: {item.table}  </p>
@@ -62,9 +64,9 @@ const Orders = () => {
           <div className="px-6 pt-4 pb-2">
             <button
               className="bg-red-500 text-gray-200 rounded hover:bg-red-400 px-6 py-2 focus:outline-none mx-1 my-1 btn-sm text-xs"
-              onClick={() => editOrder(item.id, "listo")}
+              onClick={() => editOrder(item.id, "Listo")}
             >
-              Enviar
+              {item.status === "Pendiente" ? "--" : "Enviar"}
             </button>
 
             <button
@@ -77,7 +79,10 @@ const Orders = () => {
         </div>
       ))}
       </div>
+      <ModalOrderReady/>
+
     </div>
+    
   );
 };
 

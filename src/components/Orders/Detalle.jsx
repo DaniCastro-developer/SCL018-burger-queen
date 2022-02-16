@@ -1,7 +1,7 @@
 
 import React from "react";
 import { UserContext } from "../../context/UserProvider";
-import ModalConfirm from "../Alerts/ModalConfirm";
+import ModalSendOrder from "../Alerts/ModalSendOrder";
 
 const Detalle = () => {
   const {
@@ -12,14 +12,13 @@ const Detalle = () => {
     total,
     quitar,
     OpenModal,
-    error,
     resetOrder, 
   } = React.useContext(UserContext);
 
   return (
-    <aside className=" flex flex-col  mt-6 mr-4">
+    <aside className=" flex flex-col md:col-span-2 mt-6 mr-4">
       <h2 className="md:text-4xl mt-2"> Detalle compra </h2>
-      <div className="bg-pink-500 mt-3 px-4 py-5 md:w-72 rounded-lg">
+      <div className="bg-pink-500 mt-3 px-4 py-5 md:w-full rounded-lg">
         <div className="grid md:grid-cols-2 xl:col-span-1">
         <div id="detalle" className="justify-self-start">
           <p className="mt-2"> Cliente: {cliente.name} </p>
@@ -77,11 +76,9 @@ const Detalle = () => {
             Enviar pedido{" "}
           </button>
         </div>
-        <ModalConfirm/>
+        <ModalSendOrder/>
   
-      {error ? (
-        <span className="text-sm text-red-600 text-center mt-4"> {error} </span>
-      ) : null}
+      
     </aside>
   );
 };

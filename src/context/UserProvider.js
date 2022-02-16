@@ -26,6 +26,9 @@ const [datos, setDatos] = React.useState([]);
 const [stateOrder, setStateOrder] = React.useState(false)
 const [error, setError] = React.useState(null)
 const [modalActive, setModalActive] = React.useState(false)
+const [idAction, setIdAction] = React.useState()
+  
+
 //const [confirm, setConfirm] = React.useState(false)
 
 // chrono
@@ -107,7 +110,7 @@ const run = () => {
 
   const OpenModal = () => {
     if(modalActive === false){
-    setModalActive(true)}
+      setModalActive(true)}
     else {
       setModalActive(false)
     }
@@ -167,18 +170,23 @@ const run = () => {
     setCliente(users)
   }
 
+  // enviar pediddo a cocina - doc se agrega a Firebase
+
+
+
  const agregarFire = async (e) => {
     e.preventDefault();
     const date = new Date();
     const time = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
     if (!cliente.name.trim() & !cliente.table.trim()) {
-      console.log("Recuerda registrar los datos");
+      //console.log("Recuerda registrar los datos");
       setError("Recuerda registrar los datos del cliente")
       return;
     } else if (pedido.length === 0){
-      console.log("El pedido está vacío");
+     // console.log("El pedido está vacío");
       setError("El pedido está vacío")
       return;
+      
     }
     // console.log(name, mesa);
     try {
@@ -266,6 +274,7 @@ const editOrder = async (id, status) => {
      stateOrder, 
      error, 
      time, 
+     idAction,
      setTime,
      start,
      status, 
