@@ -6,7 +6,7 @@
 # **Silencio Bruno -  Gelato e coffè APP**
 
 
- **Silencio Bruno** es una heladería tradicional italaina, que busca ser un espacio de encuentro y disfrute para nuestros usuarios. Esta app es una plataforma donde les trabajadores podrán tomar pedidos, enviarlos a cocina y registrar todo el proceso de compra en tiempo real.
+ **Silencio Bruno** es una heladería tradicional italiana que busca ser un espacio de encuentro y disfrute para nuestros usuarios. Esta app es una plataforma donde les trabajadores podrán tomar pedidos, enviarlos a cocina y registrar todo el proceso de compra en tiempo real.
 
  Puedes experimentar nuestra app en el siguiente link https://silencio-bruno-gelato.web.app/
 

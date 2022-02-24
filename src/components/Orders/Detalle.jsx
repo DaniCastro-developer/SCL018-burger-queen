@@ -16,7 +16,7 @@ const Detalle = () => {
   } = React.useContext(UserContext);
 
   return (
-    <aside className=" flex flex-col md:col-span-2 mt-6 mr-4">
+    <aside className=" flex flex-col mt-6 mr-4">
       <h2 className="md:text-4xl mt-2"> Detalle compra </h2>
       <div className="bg-pink-500 mt-3 px-4 py-5 md:w-full rounded-lg">
         <div className="grid md:grid-cols-2 xl:col-span-1">
