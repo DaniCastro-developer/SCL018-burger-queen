@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import kitchen from "../assets/img/chef.jpeg";
 import waitress from "../assets/img/waitress.jpeg";
 import Navbar from "../components/Navbar/NavBar";
+import Admi from "../components/Admi";
 
 const Roles = () => {
   return (
     <div className="cotainer">
       <Navbar />
+      <Admi/>
 
       <section className="container mt-4">
         <main>

@@ -4,12 +4,12 @@ import logopink from "../assets/img/logopink.png";
 
 const Home = () => {
   return (
-    <main className="container mt-2">
+    <main className="container">
       <div className="flex justify-center">
         <img
           src={logopink}
           alt="logo silencio Bruno"
-          className=" mt-12 ms:w-9/12 md:w-9/12 md:h-9/12 xl:w-2/6 xl:h-2/6"
+          className=" mt-8 ms:w-9/12 md:w-9/12 md:h-9/12 xl:w-2/6 xl:h-2/6"
         ></img>
       </div>
       <div id="btn-enter" className="flex justify-center space-x-10">

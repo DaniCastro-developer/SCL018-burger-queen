@@ -14,7 +14,6 @@ ReactDOM.render(
     <UserProvider>
 
     <App />
- 
     </UserProvider>
     </BrowserRouter>
     
