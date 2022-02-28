@@ -13,7 +13,7 @@ const Roles = () => {
 
       <section className="container mt-4">
         <main>
-          <h2 className="text-center text-4xl md:text-4xl mt-12 sm:text-2xl">
+          <h2 className="text-center text-4xl md:text-4xl mt-6 sm:text-2xl">
             {" "}
             Selecciona tu perfil de hoy{" "}
           </h2>
@@ -51,7 +51,6 @@ const Roles = () => {
             </Link>
           </div>
         </main>
-        ;
       </section>
     </div>
   );

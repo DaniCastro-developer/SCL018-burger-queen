@@ -1,93 +1,21 @@
 import React from "react";
-//import { withRouter } from "react-router-dom";
-//import { useHistory } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
-import { app } from "../firebase.js";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  updateProfile,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-export const auth = getAuth(app);
+import { LoginContext } from "../context/LoginProvider";
+
 const Login = (props) => {
-  const [email, setEmail] = React.useState("");
-  const [name, setName] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [error, setError] = React.useState("");
-  const [esRegistro, setEsRegistro] = React.useState(false);
-
-
-  //const history = useHistory()
-  let navigate = useNavigate();
-
-  // crear cuenta con contraseña
-  const userRegister = (email, password, name) => {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        updateProfile(auth.currentUser, {
-          displayName: name,
-          email: user.email,
-          uid: user.uid,
-        });
-        console.log("usuario creado", user);
-        setEmail("");
-        setPassword("");
-        setName("");
-        setError(null);
-        //history.push('/role')
-        navigate('/role')
-      })
-      .catch((error) => {
-        if (error.code === "auth/admin-restricted-operation") {
-          setError("Debes ingresar un correo electrónico válido");
-        }
-
-        if (error.code === "auth/email-already-in-use") {
-          setError("Esta cuenta ya existe");
-        }
-
-        // ..
-        console.log(error.code);
-      });
-  };
-
-  // login con cuenta ya creada
-  const userLogin = (email, password) => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        if (user && user.emailVerified === true) {
-          console.log(user);
-        } else {
-          setError("Recuerda validar tu correo.");
-        }
-        setEmail("");
-        setPassword("");
-        setName("");
-        setError(null);
-        //history.push("/role")
-        navigate('/role')
-        
-      })
-      .catch((error) => {
-        if (error.code === "auth/missing-email") {
-          setError("Este correo no está registrado.");
-        } 
-        if (error.code === "auth/user-not-found") {
-          setError("Este usuario no está registrado.");
-        }
-        if (error.code === "auth/wrong-password") {
-          setError("La contraseña no es válida.");
-        }
-
-        console.log(error.code);
-        // console.log(errorCode + errorMessage);
-      });
-  };
+  const {
+    email,
+    setError,
+    password,
+    name,
+    userLogin,
+    userRegister,
+    esRegistro,
+    setName,
+    setEsRegistro,
+    setPassword,
+    error,
+    setEmail,
+  } = React.useContext(LoginContext);
 
   const loginCount = (e) => {
     e.preventDefault();
@@ -116,7 +44,6 @@ const Login = (props) => {
   };
 
   return (
- 
     <main className="flex-col justify-center content-center">
       <h2 className="text-5xl my-10 mt-15 text-center"> Hola Bienvenides </h2>
       <h2 className="text-pink-700 text-center mb-10">
@@ -206,8 +133,7 @@ const Login = (props) => {
         </button>
       </p>
     </main>
-   
   );
 };
 
-export default (Login);
+export default Login;

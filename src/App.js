@@ -9,26 +9,30 @@ import Register from "./views/Register";
 import Roles from "./views/Roles";
 import Kitchen from "./views/Kitchen";
 import Deliveries from "./views/Deliveries";
-import Admi from "./components/Admi";
+
+import { LoginContext } from "./context/LoginProvider"
 
 
 function App() {
+ 
+  const {
+    firebaseUser
+  } = React.useContext(LoginContext);
 
-  return (
+  return firebaseUser !== false ? (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/role" element={<Roles />} />
+      <Route path="/waitress" element={<Waitress />} />
+      <Route path="/kitchen" element={<Kitchen />} />
+      <Route path="/ready" element={<Deliveries />} />
+    </Routes>
   
-      <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/login" element={<Login/>} />
-          <Route path="/register" element={<Register/>} />
-         <Route path="/role" element={<Roles/>} /> 
-          <Route path="/login/role" element={<Admi/>} />
-          <Route path="/waitress" element={<Waitress/>} />
-          <Route path="/kitchen" element={<Kitchen/>} />
-          <Route path="/ready" element={<Deliveries/>} />
-      </Routes>
-    
-  
-  )
+) : (
+  <div>Cargando...</div>
+)
 }
 
 export default App;

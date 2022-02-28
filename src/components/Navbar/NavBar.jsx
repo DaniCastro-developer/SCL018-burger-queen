@@ -4,9 +4,16 @@ import logo from '../../assets/img/logo.png'
 import delivery from '../../assets/iconos/delivery.png'
 import user from '../../assets/iconos/user.png'
 import out from '../../assets/iconos/out.png'
+import { LoginContext } from "../../context/LoginProvider";
 
 
 const NavBar = () => {  
+
+  const {
+    firebaseUser,
+    signOff,
+  } = React.useContext(LoginContext);
+
   return (
     <header className="container flex flex-wrap py-2">
       
@@ -33,14 +40,21 @@ const NavBar = () => {
                       <img src = {user} alt='user' className="w-6 h-6 rounded border-none m-2"></img>
                     </Link>
                   </li>
+
+                  {
+                    firebaseUser !== null ? (
+                  
                   <li className="nav-item">
                   <Link to = {`/`}
                       className="px-4 py-2 flex items-center ms:text-xs md:text-xs lg:text-m uppercase font-bold leading-snug text-white hover:opacity-75"
+                      onClick={()=> signOff()}
                     >
                       Salir
                       <img src = {out} alt='out' className="w-6 h-6 rounded border-none m-2"></img>
                     </Link>
                   </li>
+                    ) : ('')
+}
                 </ul>
             </div>
           </nav>

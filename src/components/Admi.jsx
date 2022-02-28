@@ -1,52 +1,33 @@
-import React from 'react'
-import auth from '../views/Login'
-//import { onAuthStateChanged } from "firebase/auth";
-
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { LoginContext } from "../context/LoginProvider";
 
 
 
 const Admi = () => {
-   /*  let navigate = useNavigate();
-    const [userInfo, setUserInfo] = React.useState(null)
-    React.useEffect(() => {
-         const user = auth.currentUser;
+let navigate = useNavigate();
 
-        // obtener información del usuario
-        if(user && user.emailVerified === true){
-            console.log('existe usuario')
-            // setError o setEsRegistro
-            setUserInfo(auth.currentUser)
-        } else {
-            console.log('no existe usuario')
-            navigate('/login')
-        }
-    }, [navigate]) */
+const [user, setUser] = React.useState(null)
+const {
 
-// const [firebaseUser, setFirebaseUser] = React.useState(false)
+  auth
+} = React.useContext(LoginContext);
 
-/* React.useEffect(() => {
-    const authChanged = () => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        
-        const uid = user.uid;
-        console.log(user, uid)
-        setFirebaseUser(user)
-        // ...
-      } else {
-        // User is signed out
-        console.log('user is signed out');
-        setFirebaseUser(null)
-      }
-    
-    });
-  }
-  }, []) */
+  React.useEffect(() => {
 
-  return (
-    <div> Ruta protegida </div>
-  )
-}
+    const user = auth.currentUser;
+    if (user) {
+      console.log("usuario logeado");
+      setUser(user)
+    } else {
+      console.log("usuario no logeado");
+      navigate('/login')
+    }
+  }, []);
 
-export default Admi
+  return <div> 
+    <h1 className="text-center"> Hola {user.displayName} </h1> 
+   </div>;
+};
+
+export default Admi;
