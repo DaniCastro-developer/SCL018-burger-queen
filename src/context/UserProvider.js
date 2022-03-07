@@ -5,11 +5,13 @@ import {
     deleteDoc,
     doc,
     updateDoc, 
-    onSnapshot
+    onSnapshot,
   } from "firebase/firestore"
 
   import { db } from "../firebase.js";
  // import { nanoid } from 'nanoid'
+ import moment from 'moment'
+import 'moment/locale/es' // Pasar a español
 
 export const UserContext = React.createContext()
 
@@ -34,26 +36,24 @@ const [idAction, setIdAction] = React.useState()
 // chrono
 // crear estado inicial (objeto que se quede en un array[time])
 
-const timeFormat = {
+/* const timeFormat = {
   ms:0, 
   s:0, 
   m:0, 
   h:0, 
   d:0
-}
-const [time, setTime] = React.useState(timeFormat)
-const [interv, setInterv] = React.useState()
+} */
+/* const [time, setTime] = React.useState(timeFormat) */
 const [status, setStatus] = React.useState(0)
 
 
 
-const start = () =>  {
-  run();
+/* const start = () =>  {
   setStatus(1)
   setInterv(setInterval(run, 10))
-}
+} */
 
-const stop = () =>  {
+/* const stop = () =>  {
    clearInterval(interv)
   setStatus(2);
 }
@@ -67,35 +67,8 @@ const reset = () =>  {
   setStatus(0);
   setTime(timeFormat)
 
-}
+} */
 
-var updateMs = time.ms, updateS = time.s, updateM = time.m, updateH = time.h, updateD = time.d;
-
-const run = () => {
-  if(updateH === 24) {
-    updateD++;
-    updateH=0;
-  }
-
-  if(updateM === 60){
-    updateH++;
-    updateM= 0;
-  }
-  if(updateS === 60) {
-    updateM++;
-    updateS=0;
-  }
-  if(updateMs === 100) {
-    updateS++;
-    updateMs=0;
-  }
-  updateMs++;
-
-  const array = {
-    ms:updateMs, s:updateS, m:updateM, h:updateH, d:updateD
-  }
-  return setTime(array);
-}
 
 
 // ------------- Modal ---------------
@@ -177,7 +150,8 @@ const run = () => {
  const agregarFire = async (e) => {
     e.preventDefault();
     const date = new Date();
-    const time = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+    const time = moment(date).format('h:mm a');
+    const day = moment(date).format('D-MMM-YY');
     if (!cliente.name.trim() & !cliente.table.trim()) {
       //console.log("Recuerda registrar los datos");
       setError("Recuerda registrar los datos del cliente")
@@ -192,6 +166,7 @@ const run = () => {
     try {
         const docRef = await addDoc(collection(db, 'comanda'),{
             hour: time,
+            day: day,
             date: date,
             table: cliente.table,
             name: cliente.name,
@@ -203,7 +178,7 @@ const run = () => {
     
         cleanOrder()
         setError(null)
-        start()
+        //start()
         setModalActive(false)
         return docRef
 
@@ -257,6 +232,8 @@ const editOrder = async (id, status) => {
 } 
 
 
+
+
  const totalProps = {
      cliente, 
      setCliente, 
@@ -273,14 +250,8 @@ const editOrder = async (id, status) => {
      editOrder,
      stateOrder, 
      error, 
-     time, 
      idAction,
-     setTime,
-     start,
      status, 
-     stop, 
-     resume, 
-     reset,
      resetOrder,
      modalActive,
      setModalActive,

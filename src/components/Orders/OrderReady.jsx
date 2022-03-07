@@ -42,7 +42,7 @@ const OrderReady = () => {
           
           <div className="px-6 py-4 justify-self-start ">
             <div className="font-bold text-xl mb-2"> Pedido {item.name} </div>
-            <p className="text-gray-700 text-base"> Hora: {item.hour} </p>
+            <p className="text-gray-700 text-base"> Fecha: {item.day} - Hora: {item.hour} </p>
             <p className="text-gray-700 text-base">
               {" "}
               Mesa: {item.table}{" "}

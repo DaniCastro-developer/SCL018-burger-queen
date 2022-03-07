@@ -11,6 +11,7 @@ import Kitchen from "./views/Kitchen";
 import Deliveries from "./views/Deliveries";
 
 import { LoginContext } from "./context/LoginProvider"
+import Reset from "./views/Reset";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
       <Route path="/waitress" element={<Waitress />} />
       <Route path="/kitchen" element={<Kitchen />} />
       <Route path="/ready" element={<Deliveries />} />
+      <Route path="/reset" element={<Reset />} />
     </Routes>
   
 ) : (

@@ -7,6 +7,7 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
   onAuthStateChanged, 
+  sendPasswordResetEmail,
   signOut
 } from "firebase/auth";
 
@@ -121,6 +122,23 @@ const LoginProvider = (props) => {
   });
 }
 
+const resetPassword = (email) => {
+  sendPasswordResetEmail(auth, email)
+  .then(() => {
+    console.log('contraseña actualizada')
+    navigate("/login");
+  })
+  .catch((error) => {
+    console.log(error)
+    if (error.code === "auth/missing-email") {
+      setError("Este correo no está registrado.");
+    }
+    // ..
+  });
+}
+
+
+
   const totalProps = {
     userRegister,
     userLogin,
@@ -137,6 +155,7 @@ const LoginProvider = (props) => {
     setEmail,
     signOff,
     firebaseUser,
+    resetPassword
   };
 
   return (

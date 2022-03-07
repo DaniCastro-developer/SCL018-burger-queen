@@ -1,5 +1,6 @@
 import React from "react";
 import { LoginContext } from "../context/LoginProvider";
+import { Link } from "react-router-dom";
 
 const Login = (props) => {
   const {
@@ -131,6 +132,19 @@ const Login = (props) => {
         >
           {esRegistro ? "¿Ya tienes cuenta?" : "¿No tienes cuenta?"}
         </button>
+      </p>
+
+      <p className="text-center">
+        {!esRegistro ? (
+           <Link to={`/reset`}>
+          <button
+            className="btn mt-2 btn-sm text-pink-100 btn-info btn-block"
+            type="button"
+          >
+            Olvidé mi contraseña
+          </button>
+          </Link>
+        ) : null}
       </p>
     </main>
   );
