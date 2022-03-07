@@ -26,7 +26,7 @@ const {
   }, []);
 
   return <div> 
-    <h1 className="text-center"> Hola {user.displayName} </h1> 
+    {/* <h1 className="text-center"> Hola {user.displayName} </h1>  */}
    </div>;
 };
 
