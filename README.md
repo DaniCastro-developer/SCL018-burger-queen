@@ -10,6 +10,9 @@
 
  Puedes experimentar nuestra app en el siguiente link https://silencio-bruno-gelato.web.app/
 
+ usuario de prueba: correoprueba@prueba.cl
+ constraseña: 12345678
+
 
 ## **Modelo responsive** 
 
